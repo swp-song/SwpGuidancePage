@@ -21,6 +21,13 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nullable, nonatomic, strong) UIColor *swpGuidancePageNumberOfPagesColor;
 /*! 设置 SwpGuidancePage 分页控件 当前页数的颜色 !*/
 @property (nullable, nonatomic, strong) UIColor *swpGuidancePageCurrentPageColor;
+/*! 设置 SwpGuidancePage 按钮背景颜色            !*/
+@property (nullable, nonatomic, strong) UIColor *swpGuidancePageButtonBackgroundColor;
+/*! 设置 SwpGuidancePage 按钮文字颜色            !*/
+@property (nullable, nonatomic, strong) UIColor  *swpGuidancePageButtonTextColor;
+/*! 设置 SwpGuidancePage 按钮文字内容            !*/
+@property (nullable, nonatomic, copy  ) NSString *swpGuidancePageButtonText;
+
 
 /*!
  *  @author swp_song

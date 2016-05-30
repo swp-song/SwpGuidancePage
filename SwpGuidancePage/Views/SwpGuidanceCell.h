@@ -1,6 +1,6 @@
 //
 //  SwpGuidanceCell.h
-//  DyBuy
+//  swp_song
 //
 //  Created by swp_song on 16/5/26.
 //  Copyright © 2016年 swp_song. All rights reserved.
@@ -50,6 +50,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 /*! 显示 数据模型 !*/
 @property (nonatomic, strong) SwpGuidanceModel *swpGuidance;
+
+/*! 设置 按钮 背景 颜色 !*/
+@property (nonatomic, strong) UIColor  *swpGuidanceButtonBackgroundColor;
+/*! 设置 按钮 文字 颜色 !*/
+@property (nonatomic, strong) UIColor  *swpGuidanceButtonTextColor;
+/*! 设置 按钮 文字      !*/
+@property (nonatomic, copy  ) NSString *swpGuidanceButtonText;
 
 /*!
  *  @author swp_song

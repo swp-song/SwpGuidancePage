@@ -63,6 +63,8 @@
     
     if (self = [super initWithFrame:frame]) {
         [self setUI];
+//        self.swpGuidanceButtonTextColor = [UIColor blackColor];
+        [SwpGuidanceTools setButton:self.swpGuidanceButton setBackgroundColor:self.swpGuidanceButtonBackgroundColor setTitle:@"点击进入" setTitleColor:self.swpGuidanceButtonTextColor titleFontSize:15];
     }
     
     return self;
@@ -147,6 +149,24 @@
     [self setData:_swpGuidance];
 }
 
+- (void)setSwpGuidanceButtonBackgroundColor:(UIColor *)swpGuidanceButtonBackgroundColor {
+    _swpGuidanceButtonBackgroundColor      = swpGuidanceButtonBackgroundColor;
+    self.swpGuidanceButton.backgroundColor = _swpGuidanceButtonBackgroundColor;
+}
+
+- (void)setSwpGuidanceButtonTextColor:(UIColor *)swpGuidanceButtonTextColor {
+    _swpGuidanceButtonTextColor = swpGuidanceButtonTextColor;
+    _swpGuidanceButtonTextColor = _swpGuidanceButtonTextColor == nil ? [UIColor blackColor] : _swpGuidanceButtonTextColor;
+    [self.swpGuidanceButton setTitleColor:_swpGuidanceButtonTextColor forState:UIControlStateNormal];
+    [self.swpGuidanceButton setTitleColor:_swpGuidanceButtonTextColor forState:UIControlStateHighlighted];
+}
+
+- (void)setSwpGuidanceButtonText:(NSString *)swpGuidanceButtonText {
+    _swpGuidanceButtonText = swpGuidanceButtonText;
+    _swpGuidanceButtonText = _swpGuidanceButtonText == nil ? @"点击进入" : _swpGuidanceButtonText;
+    [self.swpGuidanceButton setTitle:_swpGuidanceButtonText forState:UIControlStateNormal];
+    [self.swpGuidanceButton setTitle:_swpGuidanceButtonText forState:UIControlStateHighlighted];
+}
 
 #pragma mark - Init Data Methods
 - (UIImageView *)swpGuidanceImageView {
@@ -160,10 +180,7 @@
 - (UIButton *)swpGuidanceButton {
     
     if (!_swpGuidanceButton) {
-        
         _swpGuidanceButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        _swpGuidanceButton.backgroundColor = [UIColor whiteColor];
-        [SwpGuidanceTools setButton:_swpGuidanceButton setBackgroundColor:[UIColor whiteColor] setTitle:@"点击进入" setTitleColor:[UIColor blackColor] titleFontSize:15];
         [_swpGuidanceButton addTarget:self action:@selector(clickButton:) forControlEvents:UIControlEventTouchDown];
     }
     return _swpGuidanceButton;

@@ -41,9 +41,9 @@ static NSString * const kSwpGuidanceCellID = @"kSwpGuidanceCellID";
 @property (nonatomic, copy  ) NSArray                    *swpGuidanceDataSource;
 /*! 图片模型数据源 !*/
 @property (nonatomic, copy  ) NSArray                    *swpGuidanceModelDataSource;
-
+/*! 记录cell索引   !*/
 @property (nonatomic, copy  ) NSIndexPath                *indexPath;
-
+/*!    !*/
 @property (nonatomic, copy, setter = swpGuidanceLastCell:) void(^swpGuidanceLastCell)();
 /*! ---------------------- Data Property  ---------------------- !*/
 
@@ -240,11 +240,14 @@ static NSString * const kSwpGuidanceCellID = @"kSwpGuidanceCellID";
  *  @return UICollectionViewCell
  */
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    
-    self.indexPath        = indexPath;
-    SwpGuidanceCell *cell = [SwpGuidanceCell swpGuidanceCellWithCollectionView:collectionView cellForItemAtIndexPath:indexPath forCellWithReuseIdentifier:kSwpGuidanceCellID];
-    cell.delegate         = self;
-    cell.swpGuidance      = self.swpGuidanceModelDataSource[indexPath.item];
+
+    self.indexPath                        = indexPath;
+    SwpGuidanceCell *cell                 = [SwpGuidanceCell swpGuidanceCellWithCollectionView:collectionView cellForItemAtIndexPath:indexPath forCellWithReuseIdentifier:kSwpGuidanceCellID];
+    cell.delegate                         = self;
+    cell.swpGuidance                      = self.swpGuidanceModelDataSource[indexPath.item];
+    cell.swpGuidanceButtonBackgroundColor = self.swpGuidancePageButtonBackgroundColor;
+    cell.swpGuidanceButtonTextColor       = self.swpGuidancePageButtonTextColor;
+    cell.swpGuidanceButtonText            = self.swpGuidancePageButtonText;
     return cell;
 }
 
