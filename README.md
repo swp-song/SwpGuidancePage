@@ -7,6 +7,9 @@
 
 ##### 效果：
 
+![(引导页面效果)](https://raw.githubusercontent.com/swp-song/SwpGuidancePage/master/Screenshot/SwpGuidancePage.gif)
+
+
 
 ##### 导入：
 
