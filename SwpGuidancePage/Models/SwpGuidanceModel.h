@@ -18,29 +18,29 @@ NS_ASSUME_NONNULL_BEGIN
 /*! 数据源长度    !*/
 @property (nonatomic, assign) NSInteger swpGuidanceDataSourceCount;
 
-/*!
- *  @author swp_song
+/**!
+ *  @ author swp_song
  *
- *  @brief  swpGuidanceWithImageName:swpGuidanceCellIndex:swpGuidanceDataSourceCount:   ( 工厂方法 初始 )
+ *  @ brief  swpGuidanceWithImageName:swpGuidanceCellIndex:swpGuidanceDataSourceCount:   ( 工厂方法 初始 )
  *
- *  @param  imageName
+ *  @ param  imageName
  *
- *  @param  cellIndex
+ *  @ param  cellIndex
  *
- *  @param  dataSourceCount
+ *  @ param  dataSourceCount
  *
- *  @return SwpGuidanceModel
+ *  @ return SwpGuidanceModel
  */
 + (instancetype)swpGuidanceWithImageName:(NSString *)imageName swpGuidanceCellIndex:(NSInteger)cellIndex swpGuidanceDataSourceCount:(NSInteger)dataSourceCount;
 
-/*!
- *  @author swp_song
+/**!
+ *  @ author swp_song
  *
- *  @brief  swpGuidanceWith: ( SwpGuidanceModel 转 模型方法  )
+ *  @ brief  swpGuidanceWith: ( SwpGuidanceModel 转 模型方法  )
  *
- *  @param  dataSource
+ *  @ param  dataSource
  *
- *  @return NSArray<SwpGuidanceModel *>
+ *  @ return NSArray<SwpGuidanceModel *>
  */
 + (NSArray<SwpGuidanceModel *> *)swpGuidanceWithArray:(NSArray<NSString *> *)dataSource;
 

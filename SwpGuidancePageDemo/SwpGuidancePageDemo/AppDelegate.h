@@ -1,8 +1,8 @@
 //
 //  AppDelegate.h
-//  Demo
+//  SwpGuidancePageDemo
 //
-//  Created by swp_song on 16/5/30.
+//  Created by swp_song on 2016/11/8.
 //  Copyright © 2016年 swp_song. All rights reserved.
 //
 

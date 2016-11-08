@@ -2,7 +2,7 @@
 
 
 
-#### 封装 App 引导页 
+#### 封装 App 引导页
 
 
 ##### 效果：
@@ -17,6 +17,9 @@
 手动导入：
 
 SwpGuidancePage 文件夹 导入 项目 中
+
+#import "SwpGuidancePageHeader.h"
+
 ```
 ---
 
@@ -28,16 +31,26 @@ pod search SwpGuidancePage
 
 pod 'SwpGuidancePage'
 
-#import <SwpGuidancePage/SwpGuidancePage.h>
+#import <SwpGuidancePage/SwpGuidancePageHeader.h>
 
 ```
 ---
 
+##### 1.0.2 更新:
+
+```
+
+1. 2016-11-08
+2. 新增 SwpGuidancePageHeader.h 头文件
+3. 修改 验证 App 版本 方法
+4. 请修改 CFBundleShortVersionString 版本号 ( info.plist Bundle versions string, short => value )
+
+```
+
+---
+
 ##### 备注:
 ```
-交流 群号 : 85400118
+
+
 ```
-
-
-
-

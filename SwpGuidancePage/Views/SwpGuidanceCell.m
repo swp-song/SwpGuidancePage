@@ -8,13 +8,13 @@
 
 #import "SwpGuidanceCell.h"
 
-/*! ---------------------- Tool       ---------------------- !*/
+/**! ---------------------- Tool       ---------------------- !*/
 #import "SwpGuidanceTools.h"            // 工具
-/*! ---------------------- Tool       ---------------------- !*/
+/**! ---------------------- Tool       ---------------------- !*/
 
-/*! ---------------------- Model      ---------------------- !*/
+/**! ---------------------- Model      ---------------------- !*/
 #import "SwpGuidanceModel.h"            // 数据模型
-/*! ---------------------- Model      ---------------------- !*/
+/**! ---------------------- Model      ---------------------- !*/
 
 @interface SwpGuidanceCell ()
 
@@ -31,18 +31,18 @@
 
 @implementation SwpGuidanceCell
 
-/*!
- *  @author swp_song
+/**!
+ *  @ author swp_song
  *
- *  @brief  swpGuidanceCellWithCollectionView:cellForItemAtIndexPath:forCellWithReuseIdentifier: ( 快速 初始化 SwpGuidanceCell )
+ *  @ brief  swpGuidanceCellWithCollectionView:cellForItemAtIndexPath:forCellWithReuseIdentifier: ( 快速 初始化 SwpGuidanceCell )
  *
- *  @param  collectionView
+ *  @ param  collectionView
  *
- *  @param  indexPath
+ *  @ param  indexPath
  *
- *  @param  identifier
+ *  @ param  identifier
  *
- *  @return SwpGuidanceModel
+ *  @ return SwpGuidanceModel
  */
 + (instancetype)swpGuidanceCellWithCollectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath forCellWithReuseIdentifier:(NSString *)identifier {
     
@@ -50,30 +50,30 @@
     return cell;
 }
 
-/*!
- *  @author swp_song
+/**!
+ *  @ author swp_song
  *
- *  @brief  initWithFrame:  ( Override initWithFrame )
+ *  @ brief  initWithFrame:  ( Override initWithFrame )
  *
- *  @param  frame
+ *  @ param  frame
  *
- *  @return SwpGuidanceCell
+ *  @ return SwpGuidanceCell
  */
 - (instancetype)initWithFrame:(CGRect)frame {
     
     if (self = [super initWithFrame:frame]) {
         [self setUI];
 //        self.swpGuidanceButtonTextColor = [UIColor blackColor];
-        [SwpGuidanceTools setButton:self.swpGuidanceButton setBackgroundColor:self.swpGuidanceButtonBackgroundColor setTitle:@"点击进入" setTitleColor:self.swpGuidanceButtonTextColor titleFontSize:15];
+        [SwpGuidanceTools swpGuidanceToolsSetButton:self.swpGuidanceButton setBackgroundColor:self.swpGuidanceButtonBackgroundColor setTitle:@"点击进入" setTitleColor:self.swpGuidanceButtonTextColor titleFontSize:15];
     }
     
     return self;
 }
 
-/*!
- *  @author swp_song
+/**!
+ *  @ author swp_song
  *
- *  @brief  layoutSubviews  ( Override layoutSubviews )
+ *  @ brief  layoutSubviews  ( Override layoutSubviews )
  */
 - (void)layoutSubviews {
     [super layoutSubviews];
@@ -81,10 +81,10 @@
     [self setButtonDefineFrame];
 }
 
-/*!
- *  @author swp_song
+/**!
+ *  @ author swp_song
  *
- *  @brief  setButtonDefineFrame ( 设置 按钮 frame )
+ *  @ brief  setButtonDefineFrame ( 设置 按钮 frame )
  */
 - (void)setButtonDefineFrame {
     _swpGuidanceButton.userInteractionEnabled = YES;
@@ -99,34 +99,34 @@
     _swpGuidanceButton.bounds = (CGRect){CGPointZero, CGSizeMake(200, buttonH)};
 }
 
-/*!
- *  @author swp_song
+/**!
+ *  @ author swp_song
  *
- *  @brief  setUI ( 设置 UI 控件 )
+ *  @ brief  setUI ( 设置 UI 控件 )
  */
 - (void)setUI {
     [self.contentView addSubview:self.swpGuidanceImageView];
     [self.contentView addSubview:self.swpGuidanceButton];
 }
 
-/*!
- *  @author swp_song
+/**!
+ *  @ author swp_song
  *
- *  @brief  setData:    ( 设置 数据 )
+ *  @ brief  setData:    ( 设置 数据 )
  *
- *  @param  swpGuidance
+ *  @ param  swpGuidance
  */
 - (void)setData:(SwpGuidanceModel *)swpGuidance {
     self.swpGuidanceImageView.image = [UIImage imageNamed:swpGuidance.swpGuidanceImageName];
     self.swpGuidanceButton.hidden   = swpGuidance.swpGuidanceCellIndex == swpGuidance.swpGuidanceDataSourceCount - 1 ? NO : YES;
 }
 
-/*!
- *  @author swp_song
+/**!
+ *  @ author swp_song
  *
- *  @brief  clickButton: ( 按钮 绑定 方法 )
+ *  @ brief  clickButton: ( 按钮 绑定 方法 )
  *
- *  @param  button
+ *  @ param  button
  */
 - (void)clickButton:(UIButton *)button {
     
@@ -137,12 +137,12 @@
 
 
 #pragma mark - Public Methods
-/*!
- *  @author swp_song
+/**!
+ *  @ author swp_song
  *
- *  @brief  setSwpGuidance: ( 设置 数据 )
+ *  @ brief  setSwpGuidance: ( 设置 数据 )
  *
- *  @param  swpGuidance
+ *  @ param  swpGuidance
  */
 - (void)setSwpGuidance:(SwpGuidanceModel *)swpGuidance {
     _swpGuidance = swpGuidance;

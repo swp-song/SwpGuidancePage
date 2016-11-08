@@ -17,12 +17,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 @optional
 
-/*!
- *  @author swp_song
+/**!
+ *  @ author swp_song
  *
- *  @brief  swpGuidanceCellClickButton: ( 点击 进入 App 按钮 调用 )
+ *  @ brief  swpGuidanceCellClickButton: ( 点击 进入 App 按钮 调用 )
  *
- *  @param  swpGuidanceCell
+ *  @ param  swpGuidanceCell
  */
 - (void)swpGuidanceCellClickButton:(SwpGuidanceCell *)swpGuidanceCell;
 
@@ -30,25 +30,25 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface SwpGuidanceCell : UICollectionViewCell
 
-/*!
- *  @author swp_song
+/**!
+ *  @ author swp_song
  *
- *  @brief  swpGuidanceCellWithCollectionView:cellForItemAtIndexPath:forCellWithReuseIdentifier: ( 快速 初始化 SwpGuidanceCell )
+ *  @ brief  swpGuidanceCellWithCollectionView:cellForItemAtIndexPath:forCellWithReuseIdentifier: ( 快速 初始化 SwpGuidanceCell )
  *
- *  @param  collectionView
+ *  @ param  collectionView
  *
- *  @param  indexPath
+ *  @ param  indexPath
  *
- *  @param  identifier
+ *  @ param  identifier
  *
  *  @return SwpGuidanceModel
  */
 + (instancetype)swpGuidanceCellWithCollectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath forCellWithReuseIdentifier:(NSString *)identifier;
 
-/*! Delegate !*/
+/*! Delegate            !*/
 @property (nonatomic, weak) id<SwpGuidanceCellDelegate>delegate;
 
-/*! 显示 数据模型 !*/
+/*! 显示 数据模型       !*/
 @property (nonatomic, strong) SwpGuidanceModel *swpGuidance;
 
 /*! 设置 按钮 背景 颜色 !*/
@@ -58,12 +58,12 @@ NS_ASSUME_NONNULL_BEGIN
 /*! 设置 按钮 文字      !*/
 @property (nonatomic, copy  ) NSString *swpGuidanceButtonText;
 
-/*!
- *  @author swp_song
+/**!
+ *  @ author swp_song
  *
- *  @brief  setSwpGuidance: ( 设置 数据 )
+ *  @ brief  setSwpGuidance: ( 设置 数据 )
  *
- *  @param  swpGuidance
+ *  @ param  swpGuidance
  */
 - (void)setSwpGuidance:(SwpGuidanceModel *)swpGuidance;
 

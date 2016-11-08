@@ -1,18 +1,18 @@
 //
-//  DemoViewController.m
-//  Demo
+//  ViewController.m
+//  SwpGuidancePageDemo
 //
-//  Created by swp_song on 16/5/30.
+//  Created by swp_song on 2016/11/8.
 //  Copyright © 2016年 swp_song. All rights reserved.
 //
 
-#import "DemoViewController.h"
+#import "ViewController.h"
 
-@interface DemoViewController ()
+@interface ViewController ()
 
 @end
 
-@implementation DemoViewController
+@implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

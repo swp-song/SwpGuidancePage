@@ -29,44 +29,44 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nullable, nonatomic, copy  ) NSString *swpGuidancePageButtonText;
 
 
-/*!
- *  @author swp_song
+/**!
+ *  @ author swp_song
  *
- *  @brief  swpGuidanceWithDataSource:  (  快速 初始化 SwpGuidancePage )
+ *  @ brief  swpGuidanceWithDataSource:  (  快速 初始化 SwpGuidancePage )
  *
- *  @param  dataSource
+ *  @ param  dataSource
  *
- *  @return SwpGuidancePage
+ *  @ return SwpGuidancePage
  */
 + (instancetype)swpGuidanceWithDataSource:(NSArray *)dataSource;
 
-/*!
- *  @author swp_song
+/**!
+ *  @ author swp_song
  *
- *  @brief  setSwpGuidancePageGlideGesture: ( 设置 开启 滑动 隐藏效果 )
+ *  @ brief  setSwpGuidancePageGlideGesture: ( 设置 开启 滑动 隐藏效果 )
  *
- *  @param  swpGuidancePageGlideGesture
+ *  @ param  swpGuidancePageGlideGesture
  */
 - (void)setSwpGuidancePageGlideGesture:(BOOL)swpGuidancePageGlideGesture;
 
-/*!
- *  @author swp_song
+/**!
+ *  @ author swp_song
  *
- *  @brief  swpGuidancePageCheckAppVersion:appVersionSame:appVersionNotSame: ( 验证 App 版本 是否相同  )
+ *  @ brief  swpGuidancePageCheckAppVersion:appVersionSame:appVersionNotSame: ( 验证 App 版本 是否相同  )
  *
- *  @param  appVersionSame
+ *  @ param  appVersionSame
  *
- *  @param  appVersionNotSame
+ *  @ param  appVersionNotSame
  */
 + (void)swpGuidancePageCheckAppVersion:(nullable void(^)(NSString *version))appVersionSame appVersionNotSame:(nullable void(^)(NSString *appVersion, NSString *oldVersion))appVersionNotSame;
 
 
-/*!
- *  @author swp_song
+/**!
+ *  @ author swp_song
  *
- *  @brief  swpGuidanceLastCell: ( 滑动 最后一个 cell )
+ *  @ brief  swpGuidanceLastCell: ( 滑动 最后一个 cell )
  *
- *  @param  swpGuidanceLastCell
+ *  @ param  swpGuidanceLastCell
  */
 - (void)swpGuidanceLastCell:(void (^)())swpGuidanceLastCell;
 
