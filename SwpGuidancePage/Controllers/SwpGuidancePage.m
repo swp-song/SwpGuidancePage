@@ -359,12 +359,16 @@ static NSString * const kSwpGuidanceCellID = @"kSwpGuidanceCellID";
  *
  *  @ param  appVersionNotSame
  */
-+ (void)swpGuidancePageCheckAppVersion:(void(^)(NSString *version))appVersionSame appVersionNotSame:(void(^)(NSString *appVersion, NSString *oldVersion))appVersionNotSame {
++ (void)swpGuidancePageCheckAppVersion:(void(^)(NSString *version))appVersionSame appVersionNotSame:(BOOL (^)(NSString *appVersion, NSString *oldVersion))appVersionNotSame {
 
     [SwpGuidanceTools swpGuidanceToolsCheckAppVersion:^(NSString * _Nonnull version) {
         if (appVersionSame) appVersionSame(version);
     } appVersionNotSame:^(NSString * _Nonnull appVersion, NSString * _Nonnull oldVersion) {
-        if (appVersionNotSame) appVersionNotSame(appVersion, oldVersion);
+        if (appVersionNotSame) {
+           return  appVersionNotSame(appVersion, oldVersion);
+        }
+        return YES;
+        
     }];
 
 }

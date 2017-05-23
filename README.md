@@ -2,7 +2,11 @@
 
 
 
-#### 封装 App 引导页
+#### SwpGuidancePage ( 简介 )
+
+```
+SwpGuidancePage 根据业务需求, 简单封装引导页 视图控制器, 简单易用
+```
 
 
 ##### 效果：
@@ -13,44 +17,55 @@
 
 ##### 导入：
 
-```
-手动导入：
-
-SwpGuidancePage 文件夹 导入 项目 中
-
-#import "SwpGuidancePageHeader.h"
-
-```
----
 
 ```ruby
 
-CocoaPods 导入:
+  1. 手动导入：
 
-pod search SwpGuidancePage
+ 	  * SwpGuidancePage 文件夹导入项目中
 
-pod 'SwpGuidancePage'
+  	* #import "SwpGuidancePageHeader"  // 头文件
 
-#import <SwpGuidancePage/SwpGuidancePageHeader.h>
 
-```
----
 
-##### 1.0.2 更新:
+  2. CocoaPods 导入:
 
-```
+  	* pod search SwpGuidancePage
 
-1. 2016-11-08
-2. 新增 SwpGuidancePageHeader.h 头文件
-3. 修改 验证 App 版本 方法
-4. 请修改 CFBundleShortVersionString 版本号 ( info.plist Bundle versions string, short => value )
+  	* pod 'SwpGuidancePage'
+
+  	* #import <SwpGuidancePage/SwpGuidancePageHeader.h>
 
 ```
+**...更多工具请查看 Demo**
 
----
+-------
 
-##### 备注:
+##### 版本记录
+
+-------
+```
+1. 版本版本: 1.1.0
+
+2. 更新时间: 2017-05-23 15:10:05
+
+3. 更新内容:
+    1. 修改内部方法, 是否保存内部版本号
+
 ```
 
+-------
 
+
+#### 备注：
 ```
+持续更新, 如果喜欢, 欢迎 Star
+```
+
+-------
+
+#### 声明:
+
+**著作权归 ©swp_song, 如需转载请标明出处**
+
+-------

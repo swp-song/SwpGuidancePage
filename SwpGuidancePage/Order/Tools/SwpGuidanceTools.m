@@ -44,7 +44,7 @@
  *
  *  @ param  appVersionNotSame
  */
-+ (void)swpGuidanceToolsCheckAppVersion:(void(^)(NSString *version))appVersionSame appVersionNotSame:(void(^)(NSString *appVersion, NSString *oldVersion))appVersionNotSame {
++ (void)swpGuidanceToolsCheckAppVersion:(void(^)(NSString *version))appVersionSame appVersionNotSame:(BOOL (^)(NSString *appVersion, NSString *oldVersion))appVersionNotSame {
     
     static NSString * const kSwpVersion = @"kSwpVersion";
     
@@ -56,8 +56,12 @@
     
     //  版本 不同
     if ([oldVersion compare:appVersion options:NSNumericSearch] == NSOrderedAscending || oldVersion == nil) {
-        [[self class] swpGuidanceToolsSaveAppVersion:kSwpVersion];
-        if (appVersionNotSame) appVersionNotSame(appVersion, oldVersion);
+        
+        if (appVersionNotSame) {
+            BOOL isSaveAppVersion =  appVersionNotSame(appVersion, oldVersion);
+            if (isSaveAppVersion)  [[self class] swpGuidanceToolsSaveAppVersion:kSwpVersion];
+        }
+        
         return;
     }
     

@@ -70,12 +70,13 @@
     swpGuidancePage.swpGuidancePageButtonBackgroundColor = [UIColor colorWithHue:0.57 saturation:0.84 brightness:0.89 alpha:1.00];
     swpGuidancePage.swpGuidancePageButtonTextColor       = [UIColor whiteColor];
     
+
+    
     [SwpGuidancePage swpGuidancePageCheckAppVersion:^(NSString * _Nonnull version) {
-        // 版本相同
         selfController.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:[ViewController new]];
-    } appVersionNotSame:^(NSString * _Nonnull appVersion, NSString * _Nonnull oldVersion) {
-        // 版本不同, 或 第一次 安装 App
+    } appVersionNotSame:^BOOL(NSString * _Nonnull appVersion, NSString * _Nonnull oldVersion) {
         selfController.window.rootViewController = swpGuidancePage;
+        return YES;
     }];
     
     // 滑动 隐藏，点击进入按钮 App

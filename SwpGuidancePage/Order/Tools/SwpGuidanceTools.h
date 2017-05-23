@@ -36,7 +36,7 @@ NS_ASSUME_NONNULL_BEGIN
  *
  *  @ param  appVersionNotSame
  */
-+ (void)swpGuidanceToolsCheckAppVersion:(nullable void(^)(NSString *version))appVersionSame appVersionNotSame:(nullable void(^)(NSString *appVersion, NSString *oldVersion))appVersionNotSame;
++ (void)swpGuidanceToolsCheckAppVersion:(nullable void(^)(NSString *version))appVersionSame appVersionNotSame:(nullable BOOL (^)(NSString *appVersion, NSString *oldVersion))appVersionNotSame;
 
 /**!
  *  @ author swp_song
