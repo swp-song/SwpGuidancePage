@@ -76,6 +76,7 @@
         selfController.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:[ViewController new]];
     } appVersionNotSame:^BOOL(NSString * _Nonnull appVersion, NSString * _Nonnull oldVersion) {
         selfController.window.rootViewController = swpGuidancePage;
+        // 不保存版本号
         return YES;
     }];
     

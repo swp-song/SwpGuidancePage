@@ -17,7 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @optional
 
-/**!
+/**
  *  @ author swp_song
  *
  *  @ brief  swpGuidanceCellClickButton: ( 点击 进入 App 按钮 调用 )
@@ -30,40 +30,39 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface SwpGuidanceCell : UICollectionViewCell
 
-/**!
- *  @ author swp_song
+/**
+ *  @author swp_song
  *
- *  @ brief  swpGuidanceCellWithCollectionView:cellForItemAtIndexPath:forCellWithReuseIdentifier: ( 快速 初始化 SwpGuidanceCell )
+ *  @brief  swpGuidanceCellWithCollectionView:reuseIdentifier:forIndexPath: ( 快速初始化一个 Cell )
  *
- *  @ param  collectionView
+ *  @param  collectionView  collectionView
  *
- *  @ param  indexPath
+ *  @param  identifier      identifier
  *
- *  @ param  identifier
+ *  @param  indexPath       indexPath
  *
- *  @return SwpGuidanceModel
+ *  @return UICollectionViewCell
  */
-+ (instancetype)swpGuidanceCellWithCollectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath forCellWithReuseIdentifier:(NSString *)identifier;
++ (instancetype)swpGuidanceCellWithCollectionView:(UICollectionView *)collectionView reuseIdentifier:(NSString *)identifier forIndexPath:(NSIndexPath *)indexPath;
 
-/*! Delegate            !*/
+
+/* Delegate            */
 @property (nonatomic, weak) id<SwpGuidanceCellDelegate>delegate;
-
-/*! 显示 数据模型       !*/
+/* 显示 数据模型       */
 @property (nonatomic, strong) SwpGuidanceModel *swpGuidance;
-
-/*! 设置 按钮 背景 颜色 !*/
+/* 设置 按钮 背景 颜色 */
 @property (nonatomic, strong) UIColor  *swpGuidanceButtonBackgroundColor;
-/*! 设置 按钮 文字 颜色 !*/
+/* 设置 按钮 文字 颜色 */
 @property (nonatomic, strong) UIColor  *swpGuidanceButtonTextColor;
-/*! 设置 按钮 文字      !*/
+/* 设置 按钮 文字      */
 @property (nonatomic, copy  ) NSString *swpGuidanceButtonText;
 
-/**!
- *  @ author swp_song
+/**
+ *  @author swp_song
  *
- *  @ brief  setSwpGuidance: ( 设置 数据 )
+ *  @brief  setSwpGuidance: ( 设置数据 )
  *
- *  @ param  swpGuidance
+ *  @param  swpGuidance swpGuidance
  */
 - (void)setSwpGuidance:(SwpGuidanceModel *)swpGuidance;
 

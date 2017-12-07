@@ -2,7 +2,7 @@
 Pod::Spec.new do |s|
 
   s.name                  = "SwpGuidancePage"
-  s.version               = "1.1.0"
+  s.version               = "1.2.0"
   s.ios.deployment_target = '7.0'
   s.summary               = " 封装 App 引导页 "
   s.homepage              = "https://github.com/swp-song/SwpGuidancePage"

@@ -8,17 +8,17 @@
 
 #import "SwpGuidancePage.h"
 
-/*! ---------------------- Tool       ---------------------- !*/
+/* ---------------------- Tool       ---------------------- */
 #import "SwpGuidanceTools.h"            // 工具类
-/*! ---------------------- Tool       ---------------------- !*/
+/* ---------------------- Tool       ---------------------- */
 
-/*! ---------------------- View       ---------------------- !*/
+/* ---------------------- Model      ---------------------- */
 #import "SwpGuidanceCell.h"             // 引导页面 view
-/*! ---------------------- View       ---------------------- !*/
+/* ---------------------- Model      ---------------------- */
 
-/*! ---------------------- Model      ---------------------- !*/
+/* ---------------------- View       ---------------------- */
 #import "SwpGuidanceModel.h"            // 引导页面 数据模型
-/*! ---------------------- Model      ---------------------- !*/
+/* ---------------------- View       ---------------------- */
 
 
 static NSString * const kSwpGuidanceCellID = @"kSwpGuidanceCellID";
@@ -26,51 +26,51 @@ static NSString * const kSwpGuidanceCellID = @"kSwpGuidanceCellID";
 @interface SwpGuidancePage () <UICollectionViewDelegateFlowLayout, UICollectionViewDataSource, SwpGuidanceCellDelegate>
 
 #pragma mark - UI   Propertys
-/**! ---------------------- UI   Property  ---------------------- !*/
+/* ---------------------- UI   Property  ---------------------- !*/
 @property (nonatomic, strong) UICollectionView           *swpGuidanceCollectionView;
-/**! UICollectionView 瀑布流 !*/
+/* UICollectionView 瀑布流 !*/
 @property (nonatomic, strong) UICollectionViewFlowLayout *swpGuidanceFlowLayout;
-/**! 显示分页 PageControl    !*/
+/* 显示分页 PageControl    !*/
 @property (nonatomic, strong) UIPageControl              *swpGuidancePageControl;
-/**! ---------------------- UI   Property  ---------------------- !*/
+/** ---------------------- UI   Property  ---------------------- !*/
 
 #pragma mark - Data Propertys
-/**! ---------------------- Data Property  ---------------------- !*/
-/**! 图片轮播数据源 !*/
-@property (nonatomic, copy  ) NSArray                    *swpGuidanceDataSource;
-/**! 图片模型数据源 !*/
-@property (nonatomic, copy  ) NSArray                    *swpGuidanceModelDataSource;
-/**! 记录cell索引   !*/
-@property (nonatomic, copy  ) NSIndexPath                *indexPath;
-/**!    !*/
-@property (nonatomic, copy, setter = swpGuidanceLastCell:) void(^swpGuidanceLastCell)();
-/**! ---------------------- Data Property  ---------------------- !*/
+/* ---------------------- Data Property  ---------------------- !*/
+/* 图片轮播数据源 !*/
+@property (nonatomic, copy  ) NSArray       *swpGuidanceDataSource;
+/* 图片模型数据源 !*/
+@property (nonatomic, copy  ) NSArray       *swpGuidanceModelDataSource;
+/* 记录cell索引   !*/
+@property (nonatomic, copy  ) NSIndexPath   *indexPath;
+/*    */
+@property (nonatomic, copy, setter = swpGuidanceLastCell:) void(^swpGuidanceLastCell)(void);
+/* ---------------------- Data Property  ---------------------- !*/
 
 @end
 
 @implementation SwpGuidancePage
 
-/**!
- *  @ author swp_song
+/**
+ *  @author swp_song
  *
- *  @ brief  swpGuidanceWithDataSource:  (  快速 初始化 SwpGuidancePage )
+ *  @brief  swpGuidanceWithDataSource:  (  快速 初始化 SwpGuidancePage )
  *
- *  @ param  dataSource
+ *  @param  dataSource  dataSource
  *
- *  @ return SwpGuidancePage
+ *  @return SwpGuidancePage
  */
 + (instancetype)swpGuidanceWithDataSource:(NSArray *)dataSource {
     return [[self alloc] initWithDataSource:dataSource];
 }
 
-/**!
- *  @ author swp_song
+/**
+ *  @author swp_song
  *
- *  @ brief  initWithDataSource: ( 初始化 SwpGuidancePage )
+ *  @brief  initWithDataSource: ( 初始化 SwpGuidancePage )
  *
- *  @ param  dataSource
+ *  @param  dataSource  dataSource
  *
- *  @ return SwpGuidancePage
+ *  @return SwpGuidancePage
  */
 - (instancetype)initWithDataSource:(NSArray *)dataSource {
 
@@ -83,10 +83,10 @@ static NSString * const kSwpGuidanceCellID = @"kSwpGuidanceCellID";
 
 
 #pragma mark - Lifecycle Methods
-/**!
- *  @ author swp_song
+/**
+ *  @author swp_song
  *
- *  @ brief  viewDidLoad ( 视图载入完成 调用 )
+ *  @brief  viewDidLoad ( 视图载入完成 调用 )
  */
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -96,55 +96,55 @@ static NSString * const kSwpGuidanceCellID = @"kSwpGuidanceCellID";
     [self setData];
 }
 
-/**!
- *  @ author swp_song
+/**
+ *  @author swp_song
  *
- *  @ brief  viewWillAppear: ( 将要加载出视图 调用)
+ *  @brief  viewWillAppear: ( 将要加载出视图 调用)
  *
- *  @ param  animated
+ *  @param  animated    animated
  */
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
 }
 
-/**!
- *  @ author swp_song
+/**
+ *  @author swp_song
  *
- *  @ brief  viewDidAppear: ( 视图 显示 窗口时 调用 )
+ *  @brief  viewDidAppear: ( 视图 显示 窗口时 调用 )
  *
- *  @ param  animated
+ *  @param  animated    animated
  */
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
 }
 
-/**!
- *  @ author swp_song
+/**
+ *  @author swp_song
  *
- *  @ brief viewWillDisappear: ( 视图  即将消失、被覆盖或是隐藏时调用 )
+ *  @brief viewWillDisappear: ( 视图  即将消失、被覆盖或是隐藏时调用 )
  *
- *  @ param animated
+ *  @param animated animated
  */
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
     // Do any additional setup after loading the view.
 }
 
-/**!
- *  @ author swp_song
+/**
+ *  @author swp_song
  *
- *  @ brief  viewDidDisappear: ( 视图已经消失、被覆盖或是隐藏时调用 )
+ *  @brief  viewDidDisappear: ( 视图已经消失、被覆盖或是隐藏时调用 )
  *
- *  @ param  animated
+ *  @param  animated    animated
  */
 - (void)viewDidDisappear:(BOOL)animated {
     [super viewDidDisappear:animated];
 }
 
-/**!
- *  @ author swp_song
+/**
+ *  @author swp_song
  *
- *  @ brief  didReceiveMemoryWarning ( 内存不足时 调用 )
+ *  @brief  didReceiveMemoryWarning ( 内存不足时 调用 )
  */
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -152,10 +152,10 @@ static NSString * const kSwpGuidanceCellID = @"kSwpGuidanceCellID";
 }
 
 
-/**!
- *  @ author swp_song
+/**
+ *  @author swp_song
  *
- *  @ brief  dealloc ( 当前 控制器 被销毁时 调用 )
+ *  @brief  dealloc ( 当前 控制器 被销毁时 调用 )
  */
 - (void)dealloc {
     NSLog(@"%s", __FUNCTION__);
@@ -163,10 +163,10 @@ static NSString * const kSwpGuidanceCellID = @"kSwpGuidanceCellID";
 
 
 #pragma mark - Set Data Method
-/**!
- *  @ author swp_song
+/**
+ *  @author swp_song
  *
- *  @ brief  setData ( 设置 初始化 数据 )
+ *  @brief  setData ( 设置 初始化 数据 )
  */
 - (void)setData {
     self.swpGuidanceModelDataSource           = [SwpGuidanceModel swpGuidanceWithArray:self.swpGuidanceDataSource];
@@ -178,19 +178,19 @@ static NSString * const kSwpGuidanceCellID = @"kSwpGuidanceCellID";
 }
 
 #pragma mark - Setting UI Methods
-/**!
- *  @ author swp_song
+/**
+ *  @author swp_song
  *
- *  @ brief  setUI   ( 设置 UI 控件 )
+ *  @brief  setUI   ( 设置 UI 控件 )
  */
 - (void)setUI {
     [self setUpUI];
 }
 
-/**!
- *  @ author swp_song
+/**
+ *  @author swp_song
  *
- *  @ brief  setUpUI ( 添加控件 )
+ *  @brief  setUpUI ( 添加控件 )
  */
 - (void)setUpUI {
     [self.view addSubview:self.swpGuidanceCollectionView];
@@ -198,49 +198,49 @@ static NSString * const kSwpGuidanceCellID = @"kSwpGuidanceCellID";
 }
 
 #pragma mark - UICollectionView DataSoure Methods
-/**!
- *  @ author swp_song
+/**
+ *  @author swp_song
  *
- *  @ brief  collectionView DataSource ( collectionView 数据源方法 设置 collectionView 分组个数 )
+ *  @brief  numberOfSectionsInCollectionView:   ( UICollectionView 数据源方法，设置 collectionView 分组个数 )
  *
- *  @ param  collectionView
+ *  @param  collectionView  collectionView
  *
- *  @ return NSInteger
+ *  @return NSInteger       NSInteger
  */
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
     return 1;
 }
 
-/**!
- *  @ author swp_song
+/**
+ *  @author swp_song
  *
- *  @ brief  collectionView DataSource ( collectionView 数据源方法 设置 collectionView 分组中 cell显示的个数 )
+ *  @brief  collectionView:numberOfItemsInSection:  ( UICollectionView 数据源方法，设置 collectionView 分组中 Cell 显示的个数 )
  *
- *  @ param  collectionView
+ *  @param  collectionView  collectionView
  *
- *  @ param  section
+ *  @param  section         section
  *
- *  @ return NSInteger
+ *  @return NSInteger       NSInteger
  */
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     return self.swpGuidanceModelDataSource.count;
 }
 
-/**!
- *  @ author swp_song
+/**
+ *  @author swp_song
  *
- *  @ brief  collectionView DataSource ( collectionView 数据源方法 设置 collectionView 分组中cell显示的数据 | 样式 )
+ *  @brief  collectionView:cellForItemAtIndexPath:  ( UICollectionView 数据源方法，设置 collectionView 分组中 Cell 显示的数据 | 样式 )
  *
- *  @ param  collectionView
+ *  @param  collectionView          collectionView
  *
- *  @ param  indexPath
+ *  @param  indexPath               indexPath
  *
- *  @ return UICollectionViewCell
+ *  @return UICollectionViewCell    UICollectionViewCell
  */
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
 
     self.indexPath                        = indexPath;
-    SwpGuidanceCell *cell                 = [SwpGuidanceCell swpGuidanceCellWithCollectionView:collectionView cellForItemAtIndexPath:indexPath forCellWithReuseIdentifier:kSwpGuidanceCellID];
+    SwpGuidanceCell *cell   = [SwpGuidanceCell swpGuidanceCellWithCollectionView:collectionView reuseIdentifier:kSwpGuidanceCellID forIndexPath:indexPath];
     cell.delegate                         = self;
     cell.swpGuidance                      = self.swpGuidanceModelDataSource[indexPath.item];
     cell.swpGuidanceButtonBackgroundColor = self.swpGuidancePageButtonBackgroundColor;
@@ -250,30 +250,30 @@ static NSString * const kSwpGuidanceCellID = @"kSwpGuidanceCellID";
 }
 
 #pragma mark - UICollectionView Delegate Methods
-/**!
- *  @ author swp_song
+/**
+ *  @author swp_song
  *
- *  @ brief  collectionView Delegate ( collectionView 代理方法 设置 collectionView  每个cell的宽高 )
+ *  @brief  collectionView:layout:sizeForItemAtIndexPath:   ( UICollectionView 代理方法，设置 collectionView  每个 Cell 的 size )
  *
- *  @ param  collectionView
+ *  @param  collectionView          collectionView
  *
- *  @ param  collectionViewLayout
+ *  @param  collectionViewLayout    collectionViewLayout
  *
- *  @ param  indexPath
+ *  @param  indexPath               indexPath
  *
- *  @ return CGSize
+ *  @return CGSize
  */
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
     return self.swpGuidanceCollectionView.frame.size;
 }
 
 #pragma mark - ScrollView Delegate Methods
-/**!
- *  @ author swp_song
+/**
+ *  @author swp_song
  *
- *  @ brief  scrollViewDidScroll:    ( scrollView 代理方法 开始拖动时候调用 < 计算分页 >  )
+ *  @brief  scrollViewDidScroll:    ( UIScrollView 代理方法，开始拖动时候调用 < 计算分页 >  )
  *
- *  @ param  scrollView
+ *  @param  scrollView  scrollView
  */
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     
@@ -288,14 +288,14 @@ static NSString * const kSwpGuidanceCellID = @"kSwpGuidanceCellID";
     self.swpGuidancePageControl.currentPage = page;
 }
 
-/**!
- *  @ author swp_song
+/**
+ *  @author swp_song
  *
- *  @ brief  scrollViewDidEndDragging:willDecelerate:    ( scrollView 代理方法 停止拖动时调用  )
+ *  @brief  scrollViewDidEndDragging:willDecelerate:    ( UIScrollView 代理方法，停止拖动时调用  )
  *
- *  @ param  scrollView
+ *  @param  scrollView  scrollView
  *
- *  @ param  decelerate
+ *  @param  decelerate  decelerate
  */
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
     
@@ -311,21 +311,21 @@ static NSString * const kSwpGuidanceCellID = @"kSwpGuidanceCellID";
 }
 
 #pragma mark - SwpGuidanceCell Delegate Methods
-/**!
- *  @ author swp_song
+/**
+ *  @author swp_song
  *
- *  @ brief  swpGuidanceCellClickButton: ( SwpGuidanceCell 代理 方法 点击 button 调用 )
+ *  @brief  swpGuidanceCellClickButton: ( SwpGuidanceCell 代理方法，点击 Button 调用 )
  *
- *  @ param  swpGuidanceCell
+ *  @param  swpGuidanceCell swpGuidanceCell
  */
 - (void)swpGuidanceCellClickButton:(SwpGuidanceCell *)swpGuidanceCell {
     [self swpGuidancePageHidden];
 }
 
-/**!
- *  @ author swp_song
+/**
+ *  @author swp_song
  *
- *  @ brief  swpGuidancePageHidden:  ( 隐藏 swpGuidancePage )
+ *  @brief  swpGuidancePageHidden:  ( 隐藏 swpGuidancePage )
  */
 - (void)swpGuidancePageHidden {
     __weak typeof(self) selfController = self;
@@ -338,26 +338,26 @@ static NSString * const kSwpGuidanceCellID = @"kSwpGuidanceCellID";
 
 #pragma mark - Public Methods
 
-/**!
- *  @ author swp_song
+/**
+ *  @author swp_song
  *
- *  @ brief  swpGuidanceLastCell: ( 滑动 最后一个 cell )
+ *  @brief  swpGuidanceLastCell: ( SwpGuidancePage 回调方法，滑动最后一个 Cell 调用 )
  *
- *  @ param  swpGuidanceLastCell
+ *  @param  swpGuidanceLastCell swpGuidanceLastCell
  */
-- (void)swpGuidanceLastCell:(void (^)())swpGuidanceLastCell {
+- (void)swpGuidanceLastCell:(void (^)(void))swpGuidanceLastCell {
     _swpGuidanceLastCell = swpGuidanceLastCell;
 }
 
 
-/**!
- *  @ author swp_song
+/**
+ *  @author swp_song
  *
- *  @ brief  swpGuidancePageCheckAppVersion:appVersionSame:appVersionNotSame: ( 验证 App 版本 是否相同  )
+ *  @brief  swpGuidancePageCheckAppVersion:appVersionSame:appVersionNotSame:    ( 验证 App 版本是否相同，是否保存版本号 )
  *
- *  @ param  appVersionSame
+ *  @param  appVersionSame      appVersionSame
  *
- *  @ param  appVersionNotSame
+ *  @param  appVersionNotSame   appVersionNotSame
  */
 + (void)swpGuidancePageCheckAppVersion:(void(^)(NSString *version))appVersionSame appVersionNotSame:(BOOL (^)(NSString *appVersion, NSString *oldVersion))appVersionNotSame {
 
@@ -368,7 +368,6 @@ static NSString * const kSwpGuidanceCellID = @"kSwpGuidanceCellID";
            return  appVersionNotSame(appVersion, oldVersion);
         }
         return YES;
-        
     }];
 
 }

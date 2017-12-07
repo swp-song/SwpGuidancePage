@@ -13,45 +13,46 @@
 NS_ASSUME_NONNULL_BEGIN
 @interface SwpGuidanceTools : NSObject
 
-/**!
- *  @ author swp_song
+/**
+ *  @author swp_song
  *
- *  @ brief  swpGuidanceToolsCheckSwpGuidanceLastCell:index:checkSuccess:checkError: ( 验证 是否 最后一个 cell )
+ *  @brief  swpGuidanceToolsCheckSwpGuidanceLastCell:index:checkSuccess:checkError: ( 验证是否，最后一个 Cell )
  *
- *  @ param  cellIndexPath
+ *  @param  cellIndexPath       cellIndexPath
  *
- *  @ param  index
+ *  @param  index               index
  *
- *  @ param  checkSuccess
+ *  @param  checkSuccess        checkSuccess
  *
- *  @ param  checkError
+ *  @param  checkError          checkError
  */
-+ (void)swpGuidanceToolsCheckSwpGuidanceLastCell:(NSIndexPath *)cellIndexPath index:(NSInteger)index checkSuccess:(nullable void(^)())checkSuccess checkError:(nullable void(^)())checkError;
-/**!
- *  @ author swp_song
- *
- *  @ brief  swpGuidanceToolsCheckAppVersion:appVersionSame:appVersionNotSame: ( 验证 App 版本 是否相同  )
- *
- *  @ param  appVersionSame
- *
- *  @ param  appVersionNotSame
- */
-+ (void)swpGuidanceToolsCheckAppVersion:(nullable void(^)(NSString *version))appVersionSame appVersionNotSame:(nullable BOOL (^)(NSString *appVersion, NSString *oldVersion))appVersionNotSame;
++ (void)swpGuidanceToolsCheckSwpGuidanceLastCell:(NSIndexPath *)cellIndexPath index:(NSInteger)index checkSuccess:(void(^ _Nullable)(void))checkSuccess checkError:(void(^ _Nullable)(void))checkError;
 
-/**!
- *  @ author swp_song
+/**
+ *  @author swp_song
  *
- *  @ brief  swpGuidanceToolsSetButton:setBackgroundColor:setTitle:setTitleColor:titleFontSize:  ( 快速 设置 一个 button )
+ *  @brief  swpGuidanceToolsCheckAppVersion:appVersionSame:appVersionNotSame: ( 验证 App 版本是否相同  )
  *
- *  @ param  button
+ *  @param  appVersionSame      appVersionSame
  *
- *  @ param  backgroundColor
+ *  @param  appVersionNotSame   appVersionNotSame
+ */
++ (void)swpGuidanceToolsCheckAppVersion:(void(^ _Nullable)(NSString *version))appVersionSame appVersionNotSame:(BOOL (^ _Nullable)(NSString *appVersion, NSString *oldVersion))appVersionNotSame;
+
+/**
+ *  @author swp_song
  *
- *  @ param  title
+ *  @brief  swpGuidanceToolsSetButton:setBackgroundColor:setTitle:setTitleColor:titleFontSize:  ( 快速设置一个 button )
  *
- *  @ param  titleColor
+ *  @param  button          button
  *
- *  @ param  fontSize
+ *  @param  backgroundColor backgroundColor
+ *
+ *  @param  title           title
+ *
+ *  @param  titleColor      titleColor
+ *
+ *  @param  fontSize        fontSize
  */
 + (void)swpGuidanceToolsSetButton:(UIButton *)button setBackgroundColor:(UIColor *)backgroundColor setTitle:(NSString *)title setTitleColor:(UIColor *)titleColor titleFontSize:(float)fontSize;
 

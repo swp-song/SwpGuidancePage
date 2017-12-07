@@ -13,23 +13,23 @@ NS_ASSUME_NONNULL_BEGIN
 @interface SwpGuidancePage : UIViewController
 
 
-/*! 设置 SwpGuidancePage 是否 隐藏 默认 NO       !*/
+/* 设置 SwpGuidancePage 是否 隐藏 默认 NO       */
 @property (nonatomic, assign, getter = isSwpGuidancePageControlHidden) BOOL swpGuidancePageControlHidden;
-/*! 设置 SwpGuidancePage 是否开启 YES            !*/
+/* 设置 SwpGuidancePage 是否开启 YES            */
 @property (nonatomic, assign, getter = isSwpGuidancePageGlideGesture)  BOOL swpGuidancePageGlideGesture;
-/*! 设置 SwpGuidancePage 分页控件 总页数的颜色   !*/
+/* 设置 SwpGuidancePage 分页控件 总页数的颜色   */
 @property (nullable, nonatomic, strong) UIColor *swpGuidancePageNumberOfPagesColor;
-/*! 设置 SwpGuidancePage 分页控件 当前页数的颜色 !*/
+/* 设置 SwpGuidancePage 分页控件 当前页数的颜色 */
 @property (nullable, nonatomic, strong) UIColor *swpGuidancePageCurrentPageColor;
-/*! 设置 SwpGuidancePage 按钮背景颜色            !*/
+/* 设置 SwpGuidancePage 按钮背景颜色            */
 @property (nullable, nonatomic, strong) UIColor *swpGuidancePageButtonBackgroundColor;
-/*! 设置 SwpGuidancePage 按钮文字颜色            !*/
+/* 设置 SwpGuidancePage 按钮文字颜色            */
 @property (nullable, nonatomic, strong) UIColor  *swpGuidancePageButtonTextColor;
-/*! 设置 SwpGuidancePage 按钮文字内容            !*/
+/* 设置 SwpGuidancePage 按钮文字内容            */
 @property (nullable, nonatomic, copy  ) NSString *swpGuidancePageButtonText;
 
 
-/**!
+/**
  *  @ author swp_song
  *
  *  @ brief  swpGuidanceWithDataSource:  (  快速 初始化 SwpGuidancePage )
@@ -40,35 +40,27 @@ NS_ASSUME_NONNULL_BEGIN
  */
 + (instancetype)swpGuidanceWithDataSource:(NSArray *)dataSource;
 
-/**!
- *  @ author swp_song
+/**
+ *  @author swp_song
  *
- *  @ brief  setSwpGuidancePageGlideGesture: ( 设置 开启 滑动 隐藏效果 )
+ *  @brief  swpGuidancePageCheckAppVersion:appVersionSame:appVersionNotSame:    ( 验证 App 版本是否相同，Block 返回，是否保存版本号  )
  *
- *  @ param  swpGuidancePageGlideGesture
+ *  @param  appVersionSame      appVersionSame
+ *
+ *  @param  appVersionNotSame   appVersionNotSame
  */
-- (void)setSwpGuidancePageGlideGesture:(BOOL)swpGuidancePageGlideGesture;
-
-/**!
- *  @ author swp_song
- *
- *  @ brief  swpGuidancePageCheckAppVersion:appVersionSame:appVersionNotSame: ( 验证 App 版本 是否相同  )
- *
- *  @ param  appVersionSame
- *
- *  @ param  appVersionNotSame
- */
-+ (void)swpGuidancePageCheckAppVersion:(nullable void(^)(NSString *version))appVersionSame appVersionNotSame:(nullable BOOL(^)(NSString *appVersion, NSString *oldVersion))appVersionNotSame;
++ (void)swpGuidancePageCheckAppVersion:(void(^ _Nullable)(NSString *version))appVersionSame appVersionNotSame:(BOOL (^_Nullable)(NSString * appVersion, NSString *oldVersion))appVersionNotSame;
 
 
-/**!
- *  @ author swp_song
+/**
+ *  @author swp_song
  *
- *  @ brief  swpGuidanceLastCell: ( 滑动 最后一个 cell )
+ *  @brief  swpGuidanceLastCell: ( SwpGuidancePage 回调方法，滑动最后一个 Cell 调用 )
  *
- *  @ param  swpGuidanceLastCell
+ *  @param  swpGuidanceLastCell swpGuidanceLastCell
  */
-- (void)swpGuidanceLastCell:(void (^)())swpGuidanceLastCell;
+- (void)swpGuidanceLastCell:(void (^)(void))swpGuidanceLastCell;
+
 
 @end
 NS_ASSUME_NONNULL_END

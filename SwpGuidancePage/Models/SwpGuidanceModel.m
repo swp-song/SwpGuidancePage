@@ -11,18 +11,18 @@
 @implementation SwpGuidanceModel
 
 
-/**!
- *  @ author swp_song
+/**
+ *  @author swp_song
  *
- *  @ brief  swpGuidanceWithImageName:swpGuidanceCellIndex:swpGuidanceDataSourceCount:   ( 工厂方法 初始 )
+ *  @brief  swpGuidanceWithImageName:swpGuidanceCellIndex:swpGuidanceDataSourceCount:   ( 工厂方法 初始 )
  *
- *  @ param  imageName
+ *  @param  imageName           imageName
  *
- *  @ param  cellIndex
+ *  @param  cellIndex           cellIndex
  *
- *  @ param  dataSourceCount
+ *  @param  dataSourceCount     dataSourceCount
  *
- *  @ return SwpGuidanceModel
+ *  @return SwpGuidanceModel    SwpGuidanceModel
  */
 + (instancetype)swpGuidanceWithImageName:(NSString *)imageName swpGuidanceCellIndex:(NSInteger)cellIndex swpGuidanceDataSourceCount:(NSInteger)dataSourceCount {
     SwpGuidanceModel *swpGuidance          = [[self alloc] init];
@@ -32,14 +32,14 @@
     return swpGuidance;
 }
 
-/**!
- *  @ author swp_song
+/**
+ *  @author swp_song
  *
- *  @ brief  swpGuidanceWith: ( SwpGuidanceModel 转 模型方法  )
+ *  @brief  swpGuidanceWith: ( SwpGuidanceModel 转 模型方法  )
  *
- *  @ param  dataSource
+ *  @param  dataSource  dataSource
  *
- *  @ return NSArray<SwpGuidanceModel *>
+ *  @return NSArray<SwpGuidanceModel *>
  */
 + (NSArray<SwpGuidanceModel *> *)swpGuidanceWithArray:(NSArray<NSString *> *)dataSource {
     

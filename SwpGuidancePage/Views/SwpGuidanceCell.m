@@ -8,13 +8,14 @@
 
 #import "SwpGuidanceCell.h"
 
-/**! ---------------------- Tool       ---------------------- !*/
+/* ---------------------- Tool       ---------------------- */
 #import "SwpGuidanceTools.h"            // 工具
-/**! ---------------------- Tool       ---------------------- !*/
+/* ---------------------- Tool       ---------------------- */
 
-/**! ---------------------- Model      ---------------------- !*/
+/* ---------------------- Model      ---------------------- */
 #import "SwpGuidanceModel.h"            // 数据模型
-/**! ---------------------- Model      ---------------------- !*/
+/* ---------------------- Model      ---------------------- */
+
 
 @interface SwpGuidanceCell ()
 
@@ -31,49 +32,48 @@
 
 @implementation SwpGuidanceCell
 
-/**!
- *  @ author swp_song
+/**
+ *  @author swp_song
  *
- *  @ brief  swpGuidanceCellWithCollectionView:cellForItemAtIndexPath:forCellWithReuseIdentifier: ( 快速 初始化 SwpGuidanceCell )
+ *  @brief  swpGuidanceCellWithCollectionView:reuseIdentifier:forIndexPath: ( 快速初始化一个 Cell )
  *
- *  @ param  collectionView
+ *  @param  collectionView  collectionView
  *
- *  @ param  indexPath
+ *  @param  identifier      identifier
  *
- *  @ param  identifier
+ *  @param  indexPath       indexPath
  *
- *  @ return SwpGuidanceModel
+ *  @return UICollectionViewCell
  */
-+ (instancetype)swpGuidanceCellWithCollectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath forCellWithReuseIdentifier:(NSString *)identifier {
++ (instancetype)swpGuidanceCellWithCollectionView:(UICollectionView *)collectionView reuseIdentifier:(NSString *)identifier forIndexPath:(NSIndexPath *)indexPath {
     
-    SwpGuidanceCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:identifier forIndexPath:indexPath];
-    return cell;
+    return [collectionView dequeueReusableCellWithReuseIdentifier:identifier forIndexPath:indexPath];
 }
 
-/**!
- *  @ author swp_song
+/**
+ *  @author swp_song
  *
- *  @ brief  initWithFrame:  ( Override initWithFrame )
+ *  @brief  initWithFrame:  ( Override Init )
  *
- *  @ param  frame
+ *  @param  frame   frame
  *
- *  @ return SwpGuidanceCell
+ *  @return UICollectionViewCell
  */
 - (instancetype)initWithFrame:(CGRect)frame {
     
     if (self = [super initWithFrame:frame]) {
         [self setUI];
-//        self.swpGuidanceButtonTextColor = [UIColor blackColor];
+        
         [SwpGuidanceTools swpGuidanceToolsSetButton:self.swpGuidanceButton setBackgroundColor:self.swpGuidanceButtonBackgroundColor setTitle:@"点击进入" setTitleColor:self.swpGuidanceButtonTextColor titleFontSize:15];
     }
     
     return self;
 }
 
-/**!
- *  @ author swp_song
+/**
+ *  @author swp_song
  *
- *  @ brief  layoutSubviews  ( Override layoutSubviews )
+ *  @brief  layoutSubviews  ( Override layoutSubviews )
  */
 - (void)layoutSubviews {
     [super layoutSubviews];
@@ -81,10 +81,10 @@
     [self setButtonDefineFrame];
 }
 
-/**!
- *  @ author swp_song
+/**
+ *  @author swp_song
  *
- *  @ brief  setButtonDefineFrame ( 设置 按钮 frame )
+ *  @brief  setButtonDefineFrame ( 设置 按钮 frame )
  */
 - (void)setButtonDefineFrame {
     _swpGuidanceButton.userInteractionEnabled = YES;
@@ -99,34 +99,34 @@
     _swpGuidanceButton.bounds = (CGRect){CGPointZero, CGSizeMake(200, buttonH)};
 }
 
-/**!
- *  @ author swp_song
+/**
+ *  @author swp_song
  *
- *  @ brief  setUI ( 设置 UI 控件 )
+ *  @brief  setUI ( 设置 UI 控件 )
  */
 - (void)setUI {
     [self.contentView addSubview:self.swpGuidanceImageView];
     [self.contentView addSubview:self.swpGuidanceButton];
 }
 
-/**!
- *  @ author swp_song
+/**
+ *  @author swp_song
  *
- *  @ brief  setData:    ( 设置 数据 )
+ *  @brief  setData:    ( 设置 数据 )
  *
- *  @ param  swpGuidance
+ *  @param  swpGuidance swpGuidance
  */
 - (void)setData:(SwpGuidanceModel *)swpGuidance {
     self.swpGuidanceImageView.image = [UIImage imageNamed:swpGuidance.swpGuidanceImageName];
     self.swpGuidanceButton.hidden   = swpGuidance.swpGuidanceCellIndex == swpGuidance.swpGuidanceDataSourceCount - 1 ? NO : YES;
 }
 
-/**!
- *  @ author swp_song
+/**
+ *  @author swp_song
  *
- *  @ brief  clickButton: ( 按钮 绑定 方法 )
+ *  @brief  clickButton:    ( 按钮绑定方法 )
  *
- *  @ param  button
+ *  @param  button  button
  */
 - (void)clickButton:(UIButton *)button {
     
@@ -137,23 +137,37 @@
 
 
 #pragma mark - Public Methods
-/**!
- *  @ author swp_song
+/**
+ *  @author swp_song
  *
- *  @ brief  setSwpGuidance: ( 设置 数据 )
+ *  @brief  setSwpGuidance: ( 设置数据 )
  *
- *  @ param  swpGuidance
+ *  @param  swpGuidance swpGuidance
  */
 - (void)setSwpGuidance:(SwpGuidanceModel *)swpGuidance {
     _swpGuidance = swpGuidance;
     [self setData:_swpGuidance];
 }
 
+/**
+ *  @author swp_song
+ *
+ *  @brief  swpGuidanceButtonBackgroundColor:   ( 设置按钮背景颜色 )
+ *
+ *  @param  swpGuidanceButtonBackgroundColor    swpGuidanceButtonBackgroundColor
+ */
 - (void)setSwpGuidanceButtonBackgroundColor:(UIColor *)swpGuidanceButtonBackgroundColor {
     _swpGuidanceButtonBackgroundColor      = swpGuidanceButtonBackgroundColor;
     self.swpGuidanceButton.backgroundColor = _swpGuidanceButtonBackgroundColor;
 }
 
+/**
+ *  @author swp_song
+ *
+ *  @brief  swpGuidanceButtonTextColor: ( 设置按钮文字颜色 )
+ *
+ *  @param  swpGuidanceButtonTextColor  swpGuidanceButtonTextColor
+ */
 - (void)setSwpGuidanceButtonTextColor:(UIColor *)swpGuidanceButtonTextColor {
     _swpGuidanceButtonTextColor = swpGuidanceButtonTextColor;
     _swpGuidanceButtonTextColor = _swpGuidanceButtonTextColor == nil ? [UIColor blackColor] : _swpGuidanceButtonTextColor;
@@ -161,6 +175,13 @@
     [self.swpGuidanceButton setTitleColor:_swpGuidanceButtonTextColor forState:UIControlStateHighlighted];
 }
 
+/**
+ *  @author swp_song
+ *
+ *  @brief  swpGuidanceButtonText:  ( 设置按钮文字显示 )
+ *
+ *  @param  swpGuidanceButtonText   swpGuidanceButtonText
+ */
 - (void)setSwpGuidanceButtonText:(NSString *)swpGuidanceButtonText {
     _swpGuidanceButtonText = swpGuidanceButtonText;
     _swpGuidanceButtonText = _swpGuidanceButtonText == nil ? @"点击进入" : _swpGuidanceButtonText;

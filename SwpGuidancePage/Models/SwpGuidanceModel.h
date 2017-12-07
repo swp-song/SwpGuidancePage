@@ -11,36 +11,36 @@
 NS_ASSUME_NONNULL_BEGIN
 @interface SwpGuidanceModel : NSObject
 
-/*! 图片 名称     !*/
+/* 图片 名称     */
 @property (nonatomic, copy  ) NSString  *swpGuidanceImageName;
-/*! cell 索引     !*/
+/* cell 索引     */
 @property (nonatomic, assign) NSInteger swpGuidanceCellIndex;
-/*! 数据源长度    !*/
+/* 数据源长度    */
 @property (nonatomic, assign) NSInteger swpGuidanceDataSourceCount;
 
-/**!
- *  @ author swp_song
+/**
+ *  @author swp_song
  *
- *  @ brief  swpGuidanceWithImageName:swpGuidanceCellIndex:swpGuidanceDataSourceCount:   ( 工厂方法 初始 )
+ *  @brief  swpGuidanceWithImageName:swpGuidanceCellIndex:swpGuidanceDataSourceCount:   ( 工厂方法 初始 )
  *
- *  @ param  imageName
+ *  @param  imageName           imageName
  *
- *  @ param  cellIndex
+ *  @param  cellIndex           cellIndex
  *
- *  @ param  dataSourceCount
+ *  @param  dataSourceCount     dataSourceCount
  *
- *  @ return SwpGuidanceModel
+ *  @return SwpGuidanceModel    SwpGuidanceModel
  */
 + (instancetype)swpGuidanceWithImageName:(NSString *)imageName swpGuidanceCellIndex:(NSInteger)cellIndex swpGuidanceDataSourceCount:(NSInteger)dataSourceCount;
 
-/**!
- *  @ author swp_song
+/**
+ *  @author swp_song
  *
- *  @ brief  swpGuidanceWith: ( SwpGuidanceModel 转 模型方法  )
+ *  @brief  swpGuidanceWith: ( SwpGuidanceModel 转 模型方法  )
  *
- *  @ param  dataSource
+ *  @param  dataSource  dataSource
  *
- *  @ return NSArray<SwpGuidanceModel *>
+ *  @return NSArray<SwpGuidanceModel *>
  */
 + (NSArray<SwpGuidanceModel *> *)swpGuidanceWithArray:(NSArray<NSString *> *)dataSource;
 

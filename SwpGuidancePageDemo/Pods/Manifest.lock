@@ -1,0 +1,16 @@
+PODS:
+  - SwpGuidancePage (1.2.0)
+
+DEPENDENCIES:
+  - SwpGuidancePage (from `../`)
+
+EXTERNAL SOURCES:
+  SwpGuidancePage:
+    :path: ../
+
+SPEC CHECKSUMS:
+  SwpGuidancePage: 59bd0af1d518b023092c0879045fafc5830ff3cf
+
+PODFILE CHECKSUM: 8e3165f35f10fdf52c716d468955ca65f90eaaa2
+
+COCOAPODS: 1.4.0.beta.2

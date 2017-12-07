@@ -12,20 +12,20 @@
 
 @implementation SwpGuidanceTools
 
-/**!
- *  @ author swp_song
+/**
+ *  @author swp_song
  *
- *  @ brief  swpGuidanceToolsCheckSwpGuidanceLastCell:index:checkSuccess:checkError: ( 验证 是否 最后一个 cell )
+ *  @brief  swpGuidanceToolsCheckSwpGuidanceLastCell:index:checkSuccess:checkError: ( 验证是否，最后一个 Cell )
  *
- *  @ param  cellIndexPath
+ *  @param  cellIndexPath       cellIndexPath
  *
- *  @ param  index
+ *  @param  index               index
  *
- *  @ param  checkSuccess
+ *  @param  checkSuccess        checkSuccess
  *
- *  @ param  checkError
+ *  @param  checkError          checkError
  */
-+ (void)swpGuidanceToolsCheckSwpGuidanceLastCell:(NSIndexPath *)cellIndexPath index:(NSInteger)index checkSuccess:(void(^)())checkSuccess checkError:(void(^)())checkError {
++ (void)swpGuidanceToolsCheckSwpGuidanceLastCell:(NSIndexPath *)cellIndexPath index:(NSInteger)index checkSuccess:(void(^ )(void))checkSuccess checkError:(void(^)(void))checkError {
     
     if (cellIndexPath.item == index) {
         if (checkSuccess) checkSuccess();
@@ -35,55 +35,55 @@
 }
 
 
-/**!
- *  @ author swp_song
+/**
+ *  @author swp_song
  *
- *  @ brief  swpGuidanceToolsCheckAppVersion:appVersionSame:appVersionNotSame: ( 验证 App 版本 是否相同  )
+ *  @brief  swpGuidanceToolsCheckAppVersion:appVersionSame:appVersionNotSame: ( 验证 App 版本 是否相同  )
  *
- *  @ param  appVersionSame
+ *  @param  appVersionSame      appVersionSame
  *
- *  @ param  appVersionNotSame
+ *  @param  appVersionNotSame   appVersionNotSame
  */
 + (void)swpGuidanceToolsCheckAppVersion:(void(^)(NSString *version))appVersionSame appVersionNotSame:(BOOL (^)(NSString *appVersion, NSString *oldVersion))appVersionNotSame {
     
     static NSString * const kSwpVersion = @"kSwpVersion";
     
+    //  取出缓存版本号
+    NSString *cacheVersion  = [self.class swpGuidanceToolsGetAppVersion:kSwpVersion];
     
-    NSString *oldVersion         = [[self class] swpGuidanceToolsGetAppVersion:kSwpVersion];
+    // 取出系统当前版本号
+    NSString *appVersion    = [self.class swpGuidanceToolsCurrentVersion];
     
-    // 取出系统当前 版本号
-    NSString *appVersion         = [[self class] swpGuidanceToolsCurrentVersion];
-    
-    //  版本 不同
-    if ([oldVersion compare:appVersion options:NSNumericSearch] == NSOrderedAscending || oldVersion == nil) {
+    //  版本不同
+    if ([cacheVersion compare:appVersion options:NSNumericSearch] == NSOrderedAscending || cacheVersion == nil) {
         
         if (appVersionNotSame) {
-            BOOL isSaveAppVersion =  appVersionNotSame(appVersion, oldVersion);
-            if (isSaveAppVersion)  [[self class] swpGuidanceToolsSaveAppVersion:kSwpVersion];
+            BOOL isSaveAppVersion =  appVersionNotSame(appVersion, cacheVersion);
+            if (isSaveAppVersion)  [self.class swpGuidanceToolsSaveAppVersion:kSwpVersion];
         }
         
         return;
     }
     
-    //  版本 相同
+    //  版本相同
     if (appVersionSame) appVersionSame(appVersion);
     
 }
 
-/**!
- *  @ author swp_song
+/**
+ *  @author swp_song
  *
- *  @ brief  swpGuidanceToolsSetButton:setBackgroundColor:setTitle:setTitleColor:titleFontSize:  ( 快速 设置 一个 button )
+ *  @brief  swpGuidanceToolsSetButton:setBackgroundColor:setTitle:setTitleColor:titleFontSize:  ( 快速设置一个 button )
  *
- *  @ param  button
+ *  @param  button          button
  *
- *  @ param  backgroundColor
+ *  @param  backgroundColor backgroundColor
  *
- *  @ param  title
+ *  @param  title           title
  *
- *  @ param  titleColor
+ *  @param  titleColor      titleColor
  *
- *  @ param  fontSize
+ *  @param  fontSize        fontSize
  */
 + (void)swpGuidanceToolsSetButton:(UIButton *)button setBackgroundColor:(UIColor *)backgroundColor setTitle:(NSString *)title setTitleColor:(UIColor *)titleColor titleFontSize:(float)fontSize {
     button.backgroundColor     = backgroundColor;
@@ -99,25 +99,31 @@
 #pragma mark - NSBundle
 
 /**!
- *  @ author swp_song
+ *  @author swp_song
  *
- *  @ brief  swpGuidanceToolsCurrentVersion ( 取出 当前 App 版本号 )
+ *  @brief  swpGuidanceToolsCurrentVersion ( 取出 当前 App 版本号 )
  *
- *  @ return NSString
+ *  @return NSString
  */
 + (NSString *)swpGuidanceToolsCurrentVersion {
-    return [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"];
+    
+#if DEBUG
+    return [NSBundle.mainBundle objectForInfoDictionaryKey:@"CFBundleVersion"];
+#else
+    return [NSBundle.mainBundle objectForInfoDictionaryKey:@"CFBundleShortVersionString"];
+#endif
+    
 }
 
 
 /**!
- *  @ author swp_song
+ *  @author swp_song
  *
- *  @ brief  swpGuidanceToolsGetAppVersion: ( 取出 保存 版本号  )
+ *  @brief  swpGuidanceToolsGetAppVersion: ( 取出 保存 版本号  )
  *
- *  @ param  key
+ *  @param  key key
  *
- *  @ return NSString
+ *  @return NSString
  */
 + (NSString *)swpGuidanceToolsGetAppVersion:(NSString *)key {
     return [[NSUserDefaults standardUserDefaults] stringForKey:key];
@@ -125,11 +131,11 @@
 
 
 /**!
- *  @ author swp_song
+ *  @author swp_song
  *
- *  @ brief  swpGuidanceToolsSaveAppVersion:    (  保存 版本号  )
+ *  @brief  swpGuidanceToolsSaveAppVersion:    (  保存 版本号  )
 
- *  @ param  key
+ *  @param  key key
  */
 + (void)swpGuidanceToolsSaveAppVersion:(NSString *)key {
     [[NSUserDefaults standardUserDefaults] setObject:[[self class] swpGuidanceToolsCurrentVersion] forKey:key];
