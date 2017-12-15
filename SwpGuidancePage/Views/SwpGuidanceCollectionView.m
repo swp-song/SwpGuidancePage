@@ -24,7 +24,6 @@ static CGFloat   const  kItemLineSpacing      = 0;  //  cell Item 上下的间�
 static CGFloat   const  kItemInteritemSpacing = 0;  //  cell Item 左右的间距
 static CGFloat   const  kItemLRPadding        = 0;  //  cell Item 左右的边距
 static CGFloat   const  kItemTBPadding        = 0;  //  cell Item 上下的边距
-static NSInteger const  kCellRowNumber        = 1;  //  cell Item 每行的数量
 
 @interface SwpGuidanceCollectionView ()  <UICollectionViewDelegateFlowLayout, UICollectionViewDataSource, UIScrollViewDelegate>
 
@@ -37,7 +36,7 @@ static NSInteger const  kCellRowNumber        = 1;  //  cell Item 每行的数�
 /* ---------------------- Data Property ---------------------- */
 /* 数据源 */
 @property (nonatomic, copy) NSArray     *datas_;
-/* 记录 Cell indexPath */
+// 记录 Cell indexPath
 @property (nonatomic, copy) NSIndexPath *indexPath_;
 /* SwpGuidanceCollectionView 回到方法 ，UIScrollView 开始拖动时候调用 */
 @property (nonatomic, copy, setter = swpGuidanceScrollViewDidScroll:) void(^swpGuidanceScrollViewDidScroll)(SwpGuidanceCollectionView *, UIScrollView *, NSInteger);
@@ -45,11 +44,9 @@ static NSInteger const  kCellRowNumber        = 1;  //  cell Item 每行的数�
 @property (nonatomic, copy, setter = swpGuidanceScrollViewDidEndDragging:) void(^swpGuidanceScrollViewDidEndDragging)(SwpGuidanceCollectionView *, UIScrollView *, BOOL, BOOL);
 /* ---------------------- Data Property ---------------------- */
 
-
 @end
 
 @implementation SwpGuidanceCollectionView
-
 
 /**
  *  @author swp_song
@@ -274,7 +271,6 @@ static NSInteger const  kCellRowNumber        = 1;  //  cell Item 每行的数�
         flowLayout;
     }) : _flowLayout_;
 }
-
 
 /*
 // Only override drawRect: if you perform custom drawing.
