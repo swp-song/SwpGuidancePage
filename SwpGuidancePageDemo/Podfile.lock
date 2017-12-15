@@ -1,5 +1,5 @@
 PODS:
-  - SwpGuidancePage (2.0.2)
+  - SwpGuidancePage (2.0.3)
 
 DEPENDENCIES:
   - SwpGuidancePage (from `../`)
@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  SwpGuidancePage: c47fc079202f6ddda4feda6a6108473ee04f88ba
+  SwpGuidancePage: 5bfab366a3c19773124a17a73f16a77945d7a893
 
 PODFILE CHECKSUM: 8e3165f35f10fdf52c716d468955ca65f90eaaa2
 

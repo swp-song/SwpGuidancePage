@@ -81,7 +81,9 @@
     .swpGuidanceScrollLastPageChain(^(){
         selfController.window.rootViewController = controller;
     })
-    .swpGuidancePageShowChain(self.window, controller, NO);
+    .swpGuidancePageShowSameVersionChain(self.window, YES, ^(){
+        selfController.window.rootViewController = controller;
+    });
     
 }
 

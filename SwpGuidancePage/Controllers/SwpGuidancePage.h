@@ -36,14 +36,35 @@ NS_ASSUME_NONNULL_BEGIN
  *  @return SwpGuidancePage
  */
 - (instancetype)swpGuidancePageShow:(UIWindow *)window rootViewController:(UIViewController *)viewController isSaveVersion:(BOOL)isSaveVersion;
-
-
 /**
  *  @author swp_song
  *
  *  @brief  swpGuidancePageShowChain    ( 显示 SwpGuidancePage 判断版本，是否相同 )
  */
 - (SwpGuidancePage * _Nonnull (^)(UIWindow * _Nonnull, UIViewController * _Nonnull, BOOL))swpGuidancePageShowChain;
+
+
+/**
+ *  @author swp_song
+ *
+ *  @brief  swpGuidancePageShow:rootViewController:isSaveVersion:   ( 显示 SwpGuidancePage 判断版本，是否相同 )
+ *
+ *  @param  window          window
+ *
+ *  @param  isSaveVersion   isSaveVersion
+ *
+ *  @param  sameVersion     sameVersion
+ *
+ *  @return SwpGuidancePage
+ */
+- (instancetype)swpGuidancePageShow:(UIWindow *)window isSaveVersion:(BOOL)isSaveVersion sameVersion:(void(^ _Nullable)(void))sameVersion;
+
+/**
+ *  @author swp_song
+ *
+ *  @brief  swpGuidancePageShowSameVersionChain ( 显示 SwpGuidancePage 判断版本，是否相同 )
+ */
+- (SwpGuidancePage * _Nonnull (^)(UIWindow * _Nonnull, BOOL, void (^ _Nullable)(void)))swpGuidancePageShowSameVersionChain;
 
 /**
  *  @author swp_song

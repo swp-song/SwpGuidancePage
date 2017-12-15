@@ -253,6 +253,34 @@
     }];
 }
 
+/**
+ *  @author swp_song
+ *
+ *  @brief  swpGuidancePageShow:rootViewController:isSaveVersion:   ( 显示 SwpGuidancePage 判断版本，是否相同 )
+ *
+ *  @param  window          window
+ *
+ *  @param  viewController  viewController
+ *
+ *  @param  isSaveVersion   isSaveVersion
+ *
+ *  @param  sameVersion     sameVersion
+ *
+ *  @return SwpGuidancePage
+ */
+- (instancetype)swpGuidancePageShow:(UIWindow *)window rootViewController:(UIViewController *)viewController isSaveVersion:(BOOL)isSaveVersion sameVersion:(void(^)(void))sameVersion {
+    
+    [SwpGuidanceTools swpGuidanceToolsCheckAppVersion:^(NSString * _Nonnull version) {
+        if (sameVersion) sameVersion();
+        if (!viewController) return;
+        window.rootViewController = viewController;
+    } appVersionNotSame:^(NSString * _Nonnull appVersion, NSString * _Nonnull oldVersion) {
+        window.rootViewController = self;
+        return isSaveVersion;
+    }];
+    return self;
+}
+
 #pragma mark - Public Methods
 /**
  *  @author swp_song
@@ -273,7 +301,6 @@
         }
         return NO;
     }];
-    
 }
 
 /**
@@ -290,15 +317,7 @@
  *  @return SwpGuidancePage
  */
 - (instancetype)swpGuidancePageShow:(UIWindow *)window rootViewController:(UIViewController *)viewController isSaveVersion:(BOOL)isSaveVersion {
-    
-    [SwpGuidanceTools swpGuidanceToolsCheckAppVersion:^(NSString * _Nonnull version) {
-        window.rootViewController = viewController;
-    } appVersionNotSame:^(NSString * _Nonnull appVersion, NSString * _Nonnull oldVersion) {
-        window.rootViewController = self;
-        return isSaveVersion;
-    }];
-    
-    return self;
+    return [self swpGuidancePageShow:window rootViewController:viewController isSaveVersion:isSaveVersion sameVersion:nil];
 }
 
 /**
@@ -310,6 +329,35 @@
     
     return ^(UIWindow *window, UIViewController *viewController, BOOL isSaveVersion) {
         return [self swpGuidancePageShow:window rootViewController:viewController isSaveVersion:isSaveVersion];
+    };
+}
+
+
+/**
+ *  @author swp_song
+ *
+ *  @brief  swpGuidancePageShow:rootViewController:isSaveVersion:   ( 显示 SwpGuidancePage 判断版本，是否相同 )
+ *
+ *  @param  window          window
+ *
+ *  @param  isSaveVersion   isSaveVersion
+ *
+ *  @param  sameVersion     sameVersion
+ *
+ *  @return SwpGuidancePage
+ */
+- (instancetype)swpGuidancePageShow:(UIWindow *)window isSaveVersion:(BOOL)isSaveVersion sameVersion:(void(^)(void))sameVersion {
+    return [self swpGuidancePageShow:window rootViewController:nil isSaveVersion:isSaveVersion sameVersion:sameVersion];
+}
+
+/**
+ *  @author swp_song
+ *
+ *  @brief  swpGuidancePageShowSameVersionChain ( 显示 SwpGuidancePage 判断版本，是否相同 )
+ */
+- (SwpGuidancePage * _Nonnull (^)(UIWindow * _Nonnull, BOOL, void (^ _Nonnull)(void)))swpGuidancePageShowSameVersionChain {
+    return ^(UIWindow *window, BOOL isSaveVersion, void(^sameVersion)(void)) {
+        return [self swpGuidancePageShow:window isSaveVersion:isSaveVersion sameVersion:sameVersion];
     };
 }
 
