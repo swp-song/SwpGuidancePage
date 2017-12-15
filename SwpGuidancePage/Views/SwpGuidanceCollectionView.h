@@ -40,7 +40,7 @@ NS_ASSUME_NONNULL_BEGIN
  *
  *  @brief  swpGuidanceScrollViewDidEndDragging:    ( SwpGuidanceCollectionView 回到方法 ，UIScrollView 当手指离开屏幕那一霎那)
  *
- *  @param  swpGuidanceScrollViewDidEndDragging
+ *  @param  swpGuidanceScrollViewDidEndDragging swpGuidanceScrollViewDidEndDragging
  */
 - (void)swpGuidanceScrollViewDidEndDragging:(void (^)(SwpGuidanceCollectionView * _Nonnull swpGuidanceCollectionView, UIScrollView * _Nonnull scrollView, BOOL decelerate, BOOL isLastCell))swpGuidanceScrollViewDidEndDragging;
 
