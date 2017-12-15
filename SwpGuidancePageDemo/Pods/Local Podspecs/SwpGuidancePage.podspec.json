@@ -1,10 +1,11 @@
 {
   "name": "SwpGuidancePage",
-  "version": "1.2.0",
-  "platforms": {
-    "ios": "7.0"
-  },
+  "version": "2.0.0",
   "summary": "封装 App 引导页",
+  "description": "TODO: 封装 App 引导页",
+  "platforms": {
+    "ios": "8.0"
+  },
   "homepage": "https://github.com/swp-song/SwpGuidancePage",
   "license": {
     "type": "MIT",
@@ -15,9 +16,9 @@
   },
   "source": {
     "git": "https://github.com/swp-song/SwpGuidancePage.git",
-    "tag": "1.2.0"
+    "tag": "2.0.0"
   },
-  "source_files": "SwpGuidancePage/**/*.{h,m}",
+  "source_files": "SwpGuidancePage/**/*",
   "requires_arc": true,
   "frameworks": [
     "UIKit",

@@ -14,73 +14,38 @@
 
 /* ---------------------- Model      ---------------------- */
 #import "SwpGuidanceCell.h"             // 引导页面 view
+#import "SwpGuidanceCollectionView.h"
 /* ---------------------- Model      ---------------------- */
 
 /* ---------------------- View       ---------------------- */
 #import "SwpGuidanceModel.h"            // 引导页面 数据模型
 /* ---------------------- View       ---------------------- */
 
-
-static NSString * const kSwpGuidanceCellID = @"kSwpGuidanceCellID";
-
-@interface SwpGuidancePage () <UICollectionViewDelegateFlowLayout, UICollectionViewDataSource, SwpGuidanceCellDelegate>
+@interface SwpGuidancePage ()
 
 #pragma mark - UI   Propertys
 /* ---------------------- UI   Property  ---------------------- !*/
-@property (nonatomic, strong) UICollectionView           *swpGuidanceCollectionView;
-/* UICollectionView 瀑布流 !*/
-@property (nonatomic, strong) UICollectionViewFlowLayout *swpGuidanceFlowLayout;
+
+@property (nonatomic, strong) SwpGuidanceCollectionView *swpGuidanceCollectionView;
 /* 显示分页 PageControl    !*/
 @property (nonatomic, strong) UIPageControl              *swpGuidancePageControl;
+
+@property (nonatomic, strong) UIButton                   *closeButton;
 /** ---------------------- UI   Property  ---------------------- !*/
 
 #pragma mark - Data Propertys
 /* ---------------------- Data Property  ---------------------- !*/
-/* 图片轮播数据源 !*/
-@property (nonatomic, copy  ) NSArray       *swpGuidanceDataSource;
 /* 图片模型数据源 !*/
-@property (nonatomic, copy  ) NSArray       *swpGuidanceModelDataSource;
-/* 记录cell索引   !*/
-@property (nonatomic, copy  ) NSIndexPath   *indexPath;
-/*    */
-@property (nonatomic, copy, setter = swpGuidanceLastCell:) void(^swpGuidanceLastCell)(void);
+@property (nonatomic, copy  ) NSArray *datas_;
+/* 设置 SwpGuidancePage 是否开启 YES            */
+@property (nonatomic, assign, getter = isSwpGuidancePageGlideGesture_)  BOOL swpGuidancePageGlideGesture_;
+/* SwpGuidancePage 回调方法，滚动到最后一页调用  */
+@property (nonatomic, copy, setter = swpGuidanceScrollLastPage:) void(^swpGuidanceScrollLastPage)(void);
 /* ---------------------- Data Property  ---------------------- !*/
 
 @end
 
 @implementation SwpGuidancePage
-
-/**
- *  @author swp_song
- *
- *  @brief  swpGuidanceWithDataSource:  (  快速 初始化 SwpGuidancePage )
- *
- *  @param  dataSource  dataSource
- *
- *  @return SwpGuidancePage
- */
-+ (instancetype)swpGuidanceWithDataSource:(NSArray *)dataSource {
-    return [[self alloc] initWithDataSource:dataSource];
-}
-
-/**
- *  @author swp_song
- *
- *  @brief  initWithDataSource: ( 初始化 SwpGuidancePage )
- *
- *  @param  dataSource  dataSource
- *
- *  @return SwpGuidancePage
- */
-- (instancetype)initWithDataSource:(NSArray *)dataSource {
-
-    if (self = [super init]) {
-        self.swpGuidanceDataSource = dataSource;
-    }
-    return self;
-}
-
-
 
 #pragma mark - Lifecycle Methods
 /**
@@ -92,8 +57,13 @@ static NSString * const kSwpGuidanceCellID = @"kSwpGuidanceCellID";
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor clearColor];
+    
     [self setUI];
+    
     [self setData];
+    
+    [self swpGuidancePageBlock];
+    
 }
 
 /**
@@ -161,6 +131,13 @@ static NSString * const kSwpGuidanceCellID = @"kSwpGuidanceCellID";
     NSLog(@"%s", __FUNCTION__);
 }
 
+- (void)viewDidLayoutSubviews {
+    
+    [super viewDidLayoutSubviews];
+    self.closeButton.layer.cornerRadius     = self.closeButton.frame.size.height / 2.0;
+    self.closeButton.layer.masksToBounds    = YES;
+}
+
 
 #pragma mark - Set Data Method
 /**
@@ -169,12 +146,7 @@ static NSString * const kSwpGuidanceCellID = @"kSwpGuidanceCellID";
  *  @brief  setData ( 设置 初始化 数据 )
  */
 - (void)setData {
-    self.swpGuidanceModelDataSource           = [SwpGuidanceModel swpGuidanceWithArray:self.swpGuidanceDataSource];
-    self.swpGuidancePageControl.numberOfPages = self.swpGuidanceModelDataSource.count;
-    self.swpGuidancePageControlHidden         = NO;
-    self.swpGuidancePageGlideGesture          = YES;
-    self.swpGuidancePageNumberOfPagesColor    = nil;
-    self.swpGuidancePageCurrentPageColor      = nil;
+    [self.closeButton addTarget:self action:@selector(clickButtonEvent:) forControlEvents:UIControlEventTouchUpInside];
 }
 
 #pragma mark - Setting UI Methods
@@ -185,6 +157,7 @@ static NSString * const kSwpGuidanceCellID = @"kSwpGuidanceCellID";
  */
 - (void)setUI {
     [self setUpUI];
+    [self setUIAutoLayout];
 }
 
 /**
@@ -195,130 +168,74 @@ static NSString * const kSwpGuidanceCellID = @"kSwpGuidanceCellID";
 - (void)setUpUI {
     [self.view addSubview:self.swpGuidanceCollectionView];
     [self.view addSubview:self.swpGuidancePageControl];
+    [self.view addSubview:self.closeButton];
 }
 
-#pragma mark - UICollectionView DataSoure Methods
-/**
- *  @author swp_song
- *
- *  @brief  numberOfSectionsInCollectionView:   ( UICollectionView 数据源方法，设置 collectionView 分组个数 )
- *
- *  @param  collectionView  collectionView
- *
- *  @return NSInteger       NSInteger
- */
-- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
-    return 1;
-}
 
 /**
  *  @author swp_song
  *
- *  @brief  collectionView:numberOfItemsInSection:  ( UICollectionView 数据源方法，设置 collectionView 分组中 Cell 显示的个数 )
- *
- *  @param  collectionView  collectionView
- *
- *  @param  section         section
- *
- *  @return NSInteger       NSInteger
+ *  @brief  setUIAutoLayout ( 设置控件的自动布局 )
  */
-- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return self.swpGuidanceModelDataSource.count;
-}
-
-/**
- *  @author swp_song
- *
- *  @brief  collectionView:cellForItemAtIndexPath:  ( UICollectionView 数据源方法，设置 collectionView 分组中 Cell 显示的数据 | 样式 )
- *
- *  @param  collectionView          collectionView
- *
- *  @param  indexPath               indexPath
- *
- *  @return UICollectionViewCell    UICollectionViewCell
- */
-- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-
-    self.indexPath                        = indexPath;
-    SwpGuidanceCell *cell   = [SwpGuidanceCell swpGuidanceCellWithCollectionView:collectionView reuseIdentifier:kSwpGuidanceCellID forIndexPath:indexPath];
-    cell.delegate                         = self;
-    cell.swpGuidance                      = self.swpGuidanceModelDataSource[indexPath.item];
-    cell.swpGuidanceButtonBackgroundColor = self.swpGuidancePageButtonBackgroundColor;
-    cell.swpGuidanceButtonTextColor       = self.swpGuidancePageButtonTextColor;
-    cell.swpGuidanceButtonText            = self.swpGuidancePageButtonText;
-    return cell;
-}
-
-#pragma mark - UICollectionView Delegate Methods
-/**
- *  @author swp_song
- *
- *  @brief  collectionView:layout:sizeForItemAtIndexPath:   ( UICollectionView 代理方法，设置 collectionView  每个 Cell 的 size )
- *
- *  @param  collectionView          collectionView
- *
- *  @param  collectionViewLayout    collectionViewLayout
- *
- *  @param  indexPath               indexPath
- *
- *  @return CGSize
- */
-- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-    return self.swpGuidanceCollectionView.frame.size;
-}
-
-#pragma mark - ScrollView Delegate Methods
-/**
- *  @author swp_song
- *
- *  @brief  scrollViewDidScroll:    ( UIScrollView 代理方法，开始拖动时候调用 < 计算分页 >  )
- *
- *  @param  scrollView  scrollView
- */
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+- (void)setUIAutoLayout {
     
-    // 精确分页
-    NSInteger page = 0;
-    if (self.swpGuidanceFlowLayout.scrollDirection == UICollectionViewScrollDirectionHorizontal) {
-        page = (scrollView.contentOffset.x + scrollView.frame.size.width * 0.5) / scrollView.frame.size.width;
-    } else {
-        page = (scrollView.contentOffset.y + scrollView.frame.size.height * 0.5) / scrollView.frame.size.height;
-    }
+    self.swpGuidanceCollectionView.frame = self.view.bounds;
+    self.swpGuidancePageControl.frame    = CGRectMake(0, self.view.frame.size.height - 50, self.view.frame.size.width, 50);
     
-    self.swpGuidancePageControl.currentPage = page;
+    CGSize  size            = [self.closeButton sizeThatFits:CGSizeZero];
+    CGFloat width           = size.width + 20;
+    self.closeButton.frame  = CGRectMake(self.view.frame.size.width - width - 20 , 50, width, size.height);
 }
 
 /**
  *  @author swp_song
  *
- *  @brief  scrollViewDidEndDragging:willDecelerate:    ( UIScrollView 代理方法，停止拖动时调用  )
- *
- *  @param  scrollView  scrollView
- *
- *  @param  decelerate  decelerate
+ *  @brief  swpGuidancePageBlock    ( SwpGuidancePage Block )
  */
-- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
+- (void)swpGuidancePageBlock {
     
+    [self swpGuidanceCollectionViewBlock:self.swpGuidanceCollectionView];
+}
+
+
+/**
+ *  @author swp_song
+ *
+ *  @brief  swpGuidanceCollectionViewBlock  ( SwpGuidanceCollectionView Block )
+ *
+ *  @param  swpGuidanceCollectionView   swpGuidanceCollectionView
+ */
+- (void)swpGuidanceCollectionViewBlock:(SwpGuidanceCollectionView *)swpGuidanceCollectionView {
+
+    __weak typeof(self) weakSelf = self;
     
-    if (!self.swpGuidancePageGlideGesture) return;
-    if (!decelerate) {
-        __weak typeof(self) selfController = self;
-        [SwpGuidanceTools swpGuidanceToolsCheckSwpGuidanceLastCell:self.indexPath index:self.swpGuidanceDataSource.count - 1 checkSuccess:^{
-            [selfController swpGuidancePageHidden];
-        } checkError:nil];
+    //  分页
+    swpGuidanceCollectionView.swpGuidanceScrollViewDidScrollChain(^(SwpGuidanceCollectionView *swpGuidanceCollectionView, UIScrollView *scrollView, NSInteger page){
+        __strong __typeof(weakSelf) strongSelf = weakSelf;
+        strongSelf.swpGuidancePageControl.currentPage = page;
+    });
+    
+    //  滑动隐藏
+    swpGuidanceCollectionView.swpGuidanceScrollViewDidEndDraggingChain(^(SwpGuidanceCollectionView *swpGuidanceCollectionView, UIScrollView *scrollView, BOOL decelerate, BOOL isLastCell){
         
-    }
+        __strong __typeof(weakSelf) strongSelf = weakSelf;
+        
+        if (!strongSelf.swpGuidancePageGlideGesture_) return;
+        
+        if (decelerate || !isLastCell) return;
+        
+        [strongSelf swpGuidancePageHidden];
+    });
 }
 
-#pragma mark - SwpGuidanceCell Delegate Methods
 /**
  *  @author swp_song
  *
- *  @brief  swpGuidanceCellClickButton: ( SwpGuidanceCell 代理方法，点击 Button 调用 )
+ *  @brief  clickButtonEvent:   ( 按钮绑定方法 )
  *
- *  @param  swpGuidanceCell swpGuidanceCell
+ *  @param  button  button
  */
-- (void)swpGuidanceCellClickButton:(SwpGuidanceCell *)swpGuidanceCell {
+- (void)clickButtonEvent:(UIButton *)button {
     [self swpGuidancePageHidden];
 }
 
@@ -328,28 +245,15 @@ static NSString * const kSwpGuidanceCellID = @"kSwpGuidanceCellID";
  *  @brief  swpGuidancePageHidden:  ( 隐藏 swpGuidancePage )
  */
 - (void)swpGuidancePageHidden {
-    __weak typeof(self) selfController = self;
+    
     [UIView animateWithDuration:0.2 animations:^{
         self.view.alpha = 0;
     } completion:^(BOOL finished) {
-        if (selfController.swpGuidanceLastCell) selfController.swpGuidanceLastCell();
+        if (self.swpGuidanceScrollLastPage) self.swpGuidanceScrollLastPage();
     }];
 }
 
 #pragma mark - Public Methods
-
-/**
- *  @author swp_song
- *
- *  @brief  swpGuidanceLastCell: ( SwpGuidancePage 回调方法，滑动最后一个 Cell 调用 )
- *
- *  @param  swpGuidanceLastCell swpGuidanceLastCell
- */
-- (void)swpGuidanceLastCell:(void (^)(void))swpGuidanceLastCell {
-    _swpGuidanceLastCell = swpGuidanceLastCell;
-}
-
-
 /**
  *  @author swp_song
  *
@@ -360,59 +264,171 @@ static NSString * const kSwpGuidanceCellID = @"kSwpGuidanceCellID";
  *  @param  appVersionNotSame   appVersionNotSame
  */
 + (void)swpGuidancePageCheckAppVersion:(void(^)(NSString *version))appVersionSame appVersionNotSame:(BOOL (^)(NSString *appVersion, NSString *oldVersion))appVersionNotSame {
-
+    
     [SwpGuidanceTools swpGuidanceToolsCheckAppVersion:^(NSString * _Nonnull version) {
         if (appVersionSame) appVersionSame(version);
     } appVersionNotSame:^(NSString * _Nonnull appVersion, NSString * _Nonnull oldVersion) {
         if (appVersionNotSame) {
-           return  appVersionNotSame(appVersion, oldVersion);
+            return  appVersionNotSame(appVersion, oldVersion);
         }
-        return YES;
+        return NO;
     }];
+    
+}
 
+/**
+ *  @author swp_song
+ *
+ *  @brief  swpGuidancePageShow:rootViewController:isSaveVersion:   ( 显示 SwpGuidancePage 判断版本，是否相同 )
+ *
+ *  @param  window          window
+ *
+ *  @param  viewController  viewController
+ *
+ *  @param  isSaveVersion   isSaveVersion
+ *
+ *  @return SwpGuidancePage
+ */
+- (instancetype)swpGuidancePageShow:(UIWindow *)window rootViewController:(UIViewController *)viewController isSaveVersion:(BOOL)isSaveVersion {
+    
+    [SwpGuidanceTools swpGuidanceToolsCheckAppVersion:^(NSString * _Nonnull version) {
+        window.rootViewController = viewController;
+    } appVersionNotSame:^(NSString * _Nonnull appVersion, NSString * _Nonnull oldVersion) {
+        window.rootViewController = self;
+        return isSaveVersion;
+    }];
+    
+    return self;
+}
+
+/**
+ *  @author swp_song
+ *
+ *  @brief  swpGuidancePageShowChain    ( 显示 SwpGuidancePage 判断版本，是否相同 )
+ */
+- (SwpGuidancePage * _Nonnull (^)(UIWindow * _Nonnull, UIViewController * _Nonnull, BOOL))swpGuidancePageShowChain {
+    
+    return ^(UIWindow *window, UIViewController *viewController, BOOL isSaveVersion) {
+        return [self swpGuidancePageShow:window rootViewController:viewController isSaveVersion:isSaveVersion];
+    };
+}
+
+/**
+ *  @author swp_song
+ *
+ *  @brief  datas   ( 设置数据源 )
+ */
+- (SwpGuidancePage * _Nonnull (^)(NSArray * _Nonnull))datas {
+    return ^(NSArray *datas) {
+        self.datas_ = [SwpGuidanceModel swpGuidanceWithArray:datas];
+        self.swpGuidancePageControl.numberOfPages = self.datas_.count;
+        self.swpGuidanceCollectionView.datas(self.datas_);
+        return self;
+    };
+}
+/**
+ *  @author swp_song
+ *
+ *  @brief  swpGuidancePageControlHidden:   ( 隐藏分页， YES = 隐藏 )
+ */
+- (SwpGuidancePage * _Nonnull (^)(BOOL))swpGuidancePageControlHidden {
+    return ^(BOOL hidden) {
+        self.swpGuidancePageControl.hidden = hidden;
+        return self;
+    };
+}
+
+/**
+ *  @author swp_song
+ *
+ *  @brief  swpGuidancePageGlideGesture ( 是否开启滑动关闭， YES = 开启， NO = 关闭， 默认关闭 )
+ */
+- (SwpGuidancePage * _Nonnull (^)(BOOL))swpGuidancePageGlideGesture {
+    return ^(BOOL pageGlideGesture) {
+        self.swpGuidancePageGlideGesture_ = pageGlideGesture;
+        return self;
+    };
+}
+
+/**
+ *  @author swp_song
+ *
+ *  @brief  swpGuidancePageNumberOfPagesColor   ( 设置总页数的颜色 )
+ */
+- (SwpGuidancePage * _Nonnull (^)(UIColor * _Nonnull))swpGuidancePageNumberOfPagesColor {
+    
+    return ^(UIColor *color) {
+        self.swpGuidancePageControl.pageIndicatorTintColor = color;
+        return self;
+    };
+}
+
+/**
+ *  @author swp_song
+ *
+ *  @brief  swpGuidancePageCurrentPageColor ( 设置分页数的颜色 )
+ */
+- (SwpGuidancePage * _Nonnull (^)(UIColor * _Nonnull))swpGuidancePageCurrentPageColor {
+    return ^(UIColor *color) {
+        self.swpGuidancePageControl.currentPageIndicatorTintColor = color;
+        return self;
+    };
+}
+
+/**
+ *  @author swp_song
+ *
+ *  @brief  swpGuidanceScrollLastPage:  ( SwpGuidancePage 回调方法，滚动到最后一页调用 )
+ *
+ *  @param  swpGuidanceScrollLastPage   swpGuidanceScrollLastPage
+ */
+- (void)swpGuidanceScrollLastPage:(void (^)(void))swpGuidanceScrollLastPage {
+    _swpGuidanceScrollLastPage = swpGuidanceScrollLastPage;
+}
+
+/**
+ *  @author swp_song
+ *
+ *  @brief  swpGuidanceScrollLastPageChain  ( SwpGuidancePage 回调方法，滚动到最后一页调用 )
+ */
+- (SwpGuidancePage * _Nonnull (^)(void (^)(void)))swpGuidanceScrollLastPageChain {
+    return ^(void(^swpGuidanceScrollLastPage)(void)) {
+        _swpGuidanceScrollLastPage = swpGuidanceScrollLastPage;
+        return self;
+    };
 }
 
 #pragma mark - Init Data Methods
-- (UICollectionView *)swpGuidanceCollectionView {
 
-    if (!_swpGuidanceCollectionView) {
-
-        _swpGuidanceCollectionView                                = [[UICollectionView alloc] initWithFrame:self.view.bounds collectionViewLayout:self.swpGuidanceFlowLayout];
-        [_swpGuidanceCollectionView registerClass:[SwpGuidanceCell class] forCellWithReuseIdentifier:kSwpGuidanceCellID];
-        _swpGuidanceCollectionView.backgroundColor                = [UIColor whiteColor];
-        _swpGuidanceCollectionView.dataSource                     = self;
-        _swpGuidanceCollectionView.delegate                       = self;
-        _swpGuidanceCollectionView.pagingEnabled                  = YES;
-        _swpGuidanceCollectionView.showsHorizontalScrollIndicator = NO;
-        _swpGuidanceCollectionView.showsVerticalScrollIndicator   = NO;
-        _swpGuidanceCollectionView.bounces                        = NO;
-    }
-    return _swpGuidanceCollectionView;
-}
-
-- (UICollectionViewFlowLayout *)swpGuidanceFlowLayout {
-
-    if (!_swpGuidanceFlowLayout) {
-        _swpGuidanceFlowLayout                         = [[UICollectionViewFlowLayout alloc] init];
-        // 横向滚动
-        _swpGuidanceFlowLayout.scrollDirection         = UICollectionViewScrollDirectionHorizontal;
-        _swpGuidanceFlowLayout.minimumLineSpacing      = 0;
-        _swpGuidanceFlowLayout.minimumInteritemSpacing = 0;
-    }
-    return _swpGuidanceFlowLayout;
+- (SwpGuidanceCollectionView *)swpGuidanceCollectionView {
+    return !_swpGuidanceCollectionView ? _swpGuidanceCollectionView = ({
+        SwpGuidanceCollectionView *swpGuidanceCollectionView = [SwpGuidanceCollectionView new];
+        swpGuidanceCollectionView;
+    }) : _swpGuidanceCollectionView;
 }
 
 - (UIPageControl *)swpGuidancePageControl {
 
-    if (!_swpGuidancePageControl) {
-        _swpGuidancePageControl                               = [[UIPageControl alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height - 50, self.view.frame.size.width, 50)];
-        _swpGuidancePageControl.enabled                       = NO;
-        _swpGuidancePageControl.hidden                        = self.swpGuidancePageControlHidden;
-        _swpGuidancePageControl.pageIndicatorTintColor        = self.swpGuidancePageNumberOfPagesColor;
-        _swpGuidancePageControl.currentPageIndicatorTintColor = self.swpGuidancePageCurrentPageColor;
-    }
-    return _swpGuidancePageControl;
+    return !_swpGuidancePageControl ? _swpGuidancePageControl = ({
+        UIPageControl *pageControl = [UIPageControl new];
+        pageControl.pageIndicatorTintColor        = [UIColor redColor];
+        pageControl.currentPageIndicatorTintColor = [UIColor blackColor];
+        pageControl;
+    }) : _swpGuidancePageControl;
 }
+
+- (UIButton *)closeButton {
+    
+    return !_closeButton ? _closeButton = ({
+        UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+        [button setTitle:@"跳过" forState:UIControlStateNormal];
+        button.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.3];
+        button.titleLabel.font = [UIFont systemFontOfSize:14];
+        button;
+    }) : _closeButton;
+}
+
+
 
 
 /*

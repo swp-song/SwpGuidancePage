@@ -60,30 +60,29 @@
 - (void)setRootViewController {
     
     
-    // 请修改 App  Build  版本号
-    __weak typeof(self) selfController = self;
     
-    SwpGuidancePage *swpGuidancePage   = [SwpGuidancePage swpGuidanceWithDataSource:@[@"guidance_page_1", @"guidance_page_2", @"guidance_page_3"]];
-    
-    swpGuidancePage.swpGuidancePageNumberOfPagesColor    = [UIColor colorWithHue:0.96 saturation:0.64 brightness:1.00 alpha:1.00];
-    swpGuidancePage.swpGuidancePageCurrentPageColor      = [UIColor colorWithHue:0.56 saturation:0.71 brightness:1.00 alpha:1.00];
-    swpGuidancePage.swpGuidancePageButtonBackgroundColor = [UIColor colorWithHue:0.57 saturation:0.84 brightness:0.89 alpha:1.00];
-    swpGuidancePage.swpGuidancePageButtonTextColor       = [UIColor whiteColor];
     
 
+    // 请修改 App  Build  版本号
     
-    [SwpGuidancePage swpGuidancePageCheckAppVersion:^(NSString * _Nonnull version) {
-        selfController.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:[ViewController new]];
-    } appVersionNotSame:^BOOL(NSString * _Nonnull appVersion, NSString * _Nonnull oldVersion) {
-        selfController.window.rootViewController = swpGuidancePage;
-        // 不保存版本号
-        return YES;
-    }];
+    NSArray *imags = @[@"guidance_page_1", @"guidance_page_2", @"guidance_page_3"];
     
-    // 滑动 隐藏，点击进入按钮 App
-    [swpGuidancePage swpGuidanceLastCell:^{
-        selfController.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:[ViewController new]];
-    }];
+    __weak typeof(self) selfController = self;
+    
+    
+    UIViewController *controller = [[UINavigationController alloc] initWithRootViewController:[ViewController new]];
+    
+    [SwpGuidancePage new]
+    .datas(imags)
+    .swpGuidancePageControlHidden(NO)
+    .swpGuidancePageNumberOfPagesColor([UIColor colorWithHue:0.96 saturation:0.64 brightness:1.00 alpha:1.00])
+    .swpGuidancePageCurrentPageColor([UIColor colorWithHue:0.56 saturation:0.71 brightness:1.00 alpha:1.00])
+    .swpGuidancePageGlideGesture(YES)
+    .swpGuidanceScrollLastPageChain(^(){
+        selfController.window.rootViewController = controller;
+    })
+    .swpGuidancePageShowChain(self.window, controller, NO);
+    
 }
 
 

@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface SwpGuidanceModel : NSObject
 
 /* 图片 名称     */
-@property (nonatomic, copy  ) NSString  *swpGuidanceImageName;
+@property (nonatomic, copy  ) id swpGuidanceImageName;
 /* cell 索引     */
 @property (nonatomic, assign) NSInteger swpGuidanceCellIndex;
 /* 数据源长度    */

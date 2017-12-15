@@ -13,21 +13,6 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@protocol SwpGuidanceCellDelegate <NSObject>
-
-@optional
-
-/**
- *  @ author swp_song
- *
- *  @ brief  swpGuidanceCellClickButton: ( 点击 进入 App 按钮 调用 )
- *
- *  @ param  swpGuidanceCell
- */
-- (void)swpGuidanceCellClickButton:(SwpGuidanceCell *)swpGuidanceCell;
-
-@end
-
 @interface SwpGuidanceCell : UICollectionViewCell
 
 /**
@@ -46,25 +31,20 @@ NS_ASSUME_NONNULL_BEGIN
 + (instancetype)swpGuidanceCellWithCollectionView:(UICollectionView *)collectionView reuseIdentifier:(NSString *)identifier forIndexPath:(NSIndexPath *)indexPath;
 
 
-/* Delegate            */
-@property (nonatomic, weak) id<SwpGuidanceCellDelegate>delegate;
-/* 显示 数据模型       */
-@property (nonatomic, strong) SwpGuidanceModel *swpGuidance;
-/* 设置 按钮 背景 颜色 */
-@property (nonatomic, strong) UIColor  *swpGuidanceButtonBackgroundColor;
-/* 设置 按钮 文字 颜色 */
-@property (nonatomic, strong) UIColor  *swpGuidanceButtonTextColor;
-/* 设置 按钮 文字      */
-@property (nonatomic, copy  ) NSString *swpGuidanceButtonText;
+/**
+ *  @author swp_song
+ *
+ *  @brief  swpGuidanceCellInit ( 快速初始化一个 Cell )
+ */
++ (__kindof SwpGuidanceCell * _Nonnull (^)(UICollectionView * _Nonnull, NSString * _Nonnull, NSIndexPath * _Nonnull))swpGuidanceCellInit;
 
 /**
  *  @author swp_song
  *
- *  @brief  setSwpGuidance: ( 设置数据 )
- *
- *  @param  swpGuidance swpGuidance
+ *  @brief  swpGuidance: ( 设置数据 )
  */
-- (void)setSwpGuidance:(SwpGuidanceModel *)swpGuidance;
+- (SwpGuidanceCell * _Nonnull (^)(SwpGuidanceModel * _Nonnull))swpGuidance;
+
 
 @end
 

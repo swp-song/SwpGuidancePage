@@ -1,6 +1,10 @@
 # SwpGuidancePage
 
 
+[![Version](https://img.shields.io/cocoapods/v/SwpGuidancePage.svg?style=flat)](http://cocoapods.org/pods/SwpGuidancePage) [![License](https://img.shields.io/cocoapods/l/SwpGuidancePage.svg?style=flat)](http://cocoapods.org/pods/SwpGuidancePage) [![Platform](https://img.shields.io/cocoapods/p/SwpGuidancePage.svg?style=flat)](http://cocoapods.org/pods/SwpGuidancePage)
+
+-------
+
 
 ### SwpGuidancePage ( 简介 )
 
@@ -14,9 +18,7 @@ SwpGuidancePage 根据业务需求, 简单封装引导页 视图控制器, 简�
 
 ![(引导页面效果)](https://raw.githubusercontent.com/swp-song/SwpGuidancePage/master/Screenshot/SwpGuidancePage.gif)
 
-
 -------
-
 
 ### 导入
 
@@ -39,11 +41,12 @@ SwpGuidancePage 根据业务需求, 简单封装引导页 视图控制器, 简�
 
 ### 版本记录
 
-> * 版本版本：1.2.0
-> * 更新时间：2017-12-07 12:58:08
+> * 版本版本：2.0.0
+> * 更新时间：2017-12-15 11:15:54
 > * 更新内容：
-    *  更新备注，一些警告。
-    *  更换获取版本号方法。
+> 
+>> *  更新内部方法，需要一些属性。
+>> *  进入按钮更换样式。
 
 -------
 
