@@ -11,6 +11,25 @@
 NS_ASSUME_NONNULL_BEGIN
 @interface SwpGuidancePage : UIViewController
 
+
+/**
+ *  @author swp_song
+ *
+ *  @brief  swpGuidancePageInfo ( 读取 SwpGuidancePage 信息资源文件 )
+ *
+ *  @return NSDictionary
+ */
+- (NSDictionary *)swpGuidancePageInfo;
+
+/**
+ *  @author swp_song
+ *
+ *  @brief  swpGuidancePageVersion  ( 读取 SwpGuidancePage 版本号 )
+ *
+ *  @return NSString
+ */
+- (NSString *)swpGuidancePageVersion;
+
 /**
  *  @author swp_song
  *
@@ -41,8 +60,7 @@ NS_ASSUME_NONNULL_BEGIN
  *
  *  @brief  swpGuidancePageShowChain    ( 显示 SwpGuidancePage 判断版本，是否相同 )
  */
-- (SwpGuidancePage * _Nonnull (^)(UIWindow * _Nonnull, UIViewController * _Nonnull, BOOL))swpGuidancePageShowChain;
-
+- (__kindof SwpGuidancePage * _Nonnull (^)(UIWindow * _Nonnull, UIViewController * _Nonnull, BOOL))swpGuidancePageShowChain;
 
 /**
  *  @author swp_song
@@ -64,42 +82,42 @@ NS_ASSUME_NONNULL_BEGIN
  *
  *  @brief  swpGuidancePageShowSameVersionChain ( 显示 SwpGuidancePage 判断版本，是否相同 )
  */
-- (SwpGuidancePage * _Nonnull (^)(UIWindow * _Nonnull, BOOL, void (^ _Nullable)(void)))swpGuidancePageShowSameVersionChain;
+- (__kindof SwpGuidancePage * _Nonnull (^)(UIWindow * _Nonnull, BOOL, void (^ _Nullable)(void)))swpGuidancePageShowSameVersionChain;
 
 /**
  *  @author swp_song
  *
  *  @brief  datas   ( 设置数据源 )
  */
-- (SwpGuidancePage * _Nonnull (^)(NSArray * _Nonnull))datas;
+- (__kindof SwpGuidancePage * _Nonnull (^)(NSArray * _Nonnull))datas;
 
 /**
  *  @author swp_song
  *
  *  @brief  swpGuidancePageControlHidden:   ( 隐藏分页， YES = 隐藏, 默认显示 )
  */
-- (SwpGuidancePage * _Nonnull (^)(BOOL))swpGuidancePageControlHidden;
+- (__kindof SwpGuidancePage * _Nonnull (^)(BOOL))swpGuidancePageControlHidden;
 
 /**
  *  @author swp_song
  *
  *  @brief  swpGuidancePageGlideGesture ( 是否开启滑动关闭， YES = 开启， NO = 关闭， 默认关闭 )
  */
-- (SwpGuidancePage * _Nonnull (^)(BOOL))swpGuidancePageGlideGesture;
+- (__kindof SwpGuidancePage * _Nonnull (^)(BOOL))swpGuidancePageGlideGesture;
 
 /**
  *  @author swp_song
  *
  *  @brief  swpGuidancePageNumberOfPagesColor   ( 设置总页数的颜色 )
  */
-- (SwpGuidancePage * _Nonnull (^)(UIColor *))swpGuidancePageNumberOfPagesColor;
+- (__kindof SwpGuidancePage * _Nonnull (^)(UIColor *))swpGuidancePageNumberOfPagesColor;
 
 /**
  *  @author swp_song
  *
  *  @brief  swpGuidancePageCurrentPageColor ( 设置分页数的颜色 )
  */
-- (SwpGuidancePage * _Nonnull (^)(UIColor * _Nonnull))swpGuidancePageCurrentPageColor;
+- (__kindof SwpGuidancePage * _Nonnull (^)(UIColor * _Nonnull))swpGuidancePageCurrentPageColor;
 
 /**
  *  @author swp_song
@@ -115,7 +133,7 @@ NS_ASSUME_NONNULL_BEGIN
  *
  *  @brief  swpGuidanceScrollLastPageChain  ( SwpGuidancePage 回调方法，滚动到最后一页调用 )
  */
-- (SwpGuidancePage * _Nonnull (^)(void (^)(void)))swpGuidanceScrollLastPageChain;
+- (__kindof SwpGuidancePage * _Nonnull (^)(void (^)(void)))swpGuidanceScrollLastPageChain;
 
 
 

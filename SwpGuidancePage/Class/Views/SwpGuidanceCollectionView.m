@@ -230,7 +230,7 @@ static CGFloat   const  kItemTBPadding        = 0;  //  cell Item 上下的边�
 - (SwpGuidanceCollectionView * _Nonnull (^)(void (^ _Nonnull)(SwpGuidanceCollectionView * _Nonnull, UIScrollView * _Nonnull, NSInteger)))swpGuidanceScrollViewDidScrollChain {
     
     return ^(void(^swpGuidanceScrollViewDidScroll)(SwpGuidanceCollectionView *, UIScrollView *, NSInteger)) {
-        _swpGuidanceScrollViewDidScroll = swpGuidanceScrollViewDidScroll;
+        [self swpGuidanceScrollViewDidScroll:swpGuidanceScrollViewDidScroll];
         return self;
     };
 }
@@ -255,7 +255,7 @@ static CGFloat   const  kItemTBPadding        = 0;  //  cell Item 上下的边�
 - (SwpGuidanceCollectionView * _Nonnull (^)(void (^ _Nonnull)(SwpGuidanceCollectionView * _Nonnull, UIScrollView * _Nonnull, BOOL, BOOL)))swpGuidanceScrollViewDidEndDraggingChain {
     
     return ^(void(^swpGuidanceScrollViewDidEndDragging)(SwpGuidanceCollectionView *, UIScrollView *, BOOL, BOOL)) {
-        _swpGuidanceScrollViewDidEndDragging = swpGuidanceScrollViewDidEndDragging;
+        [self swpGuidanceScrollViewDidEndDragging:swpGuidanceScrollViewDidEndDragging];
         return self;
     };
 }

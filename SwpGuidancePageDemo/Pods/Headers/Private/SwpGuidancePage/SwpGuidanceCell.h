@@ -1,1 +1,1 @@
-../../../../../SwpGuidancePage/Views/SwpGuidanceCell.h
+../../../../../SwpGuidancePage/Class/Views/SwpGuidanceCell.h

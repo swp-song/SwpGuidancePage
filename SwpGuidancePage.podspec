@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'SwpGuidancePage'
-  s.version          = '2.0.3'
+  s.version          = '2.1.0'
   s.summary          = '封装 App 引导页'
 
 # This description is used to generate tags and improve search results.
@@ -21,8 +21,6 @@ Pod::Spec.new do |s|
  TODO: 封装 App 引导页
                        DESC
 
-  s.ios.deployment_target = '8.0'
-
   s.homepage         = 'https://github.com/swp-song/SwpGuidancePage'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
@@ -30,8 +28,18 @@ Pod::Spec.new do |s|
   s.source           = { :git => 'https://github.com/swp-song/SwpGuidancePage.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
-  s.source_files = 'SwpGuidancePage/**/*'
-  s.requires_arc = true
-  s.framework   = "UIKit", "Foundation"
+  s.ios.deployment_target = '8.0'
+  s.source_files          = 'SwpGuidancePage/Class/**/*.{h,m}'
+  s.frameworks            = 'UIKit', 'Foundation'
+  s.resource              = 'SwpGuidancePage/Resources/SwpGuidancePage.bundle'
+  s.requires_arc          = true
+
+  # s.resource_bundles = {
+  #   'SwpGuidancePage' => ['SwpGuidancePage/Assets/*.png']
+  # }
+
+  # s.public_header_files = 'Pod/Classes/**/*.h'
+  # s.frameworks = 'UIKit', 'MapKit'
+  # s.dependency 'AFNetworking', '~> 2.3'
 
 end

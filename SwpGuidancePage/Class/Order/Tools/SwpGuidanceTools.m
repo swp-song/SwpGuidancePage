@@ -8,7 +8,7 @@
 
 #import "SwpGuidanceTools.h"
 
-#import <UIKit/UIKit.h>
+@import UIKit;
 
 @implementation SwpGuidanceTools
 
@@ -38,7 +38,7 @@
 /**
  *  @author swp_song
  *
- *  @brief  swpGuidanceToolsCheckAppVersion:appVersionSame:appVersionNotSame: ( 验证 App 版本 是否相同  )
+ *  @brief  swpGuidanceToolsCheckAppVersion:appVersionSame:appVersionNotSame: ( 验证 App 版本是否相同  )
  *
  *  @param  appVersionSame      appVersionSame
  *
@@ -95,10 +95,37 @@
     [button setTitleColor:titleColor forState:UIControlStateNormal];
     [button setTitleColor:[UIColor lightGrayColor] forState:UIControlStateHighlighted];
 }
+
+
+
+/**
+ *  @author swp_song
+ *
+ *  @brief  swpGuidanceToolsReadInfo    ( 读取 SwpGuidanceTools 信息资源文件 )
+ *
+ *  @return NSDictionary
+ */
++ (NSDictionary *)swpGuidanceToolsReadInfo {
+    return [NSDictionary dictionaryWithContentsOfFile:[NSBundle.mainBundle pathForResource:@"SwpGuidancePage.bundle/SwpGuidancePage.plist" ofType:nil]].copy;
+}
+
+
+/**
+ *  @author swp_song
+ *
+ *  @brief  swpGuidanceToolsReadVersion ( 读取 SwpGuidanceTools 版本号 )
+ *
+ *  @return NSString
+ */
++ (NSString *)swpGuidanceToolsReadVersion {
+    return [self.class swpGuidanceToolsReadInfo][@"Version"];
+}
+
+
     
 #pragma mark - NSBundle
 
-/**!
+/**
  *  @author swp_song
  *
  *  @brief  swpGuidanceToolsCurrentVersion ( 取出 当前 App 版本号 )
@@ -116,7 +143,7 @@
 }
 
 
-/**!
+/**
  *  @author swp_song
  *
  *  @brief  swpGuidanceToolsGetAppVersion: ( 取出 保存 版本号  )
@@ -130,11 +157,11 @@
 }
 
 
-/**!
+/**
  *  @author swp_song
  *
  *  @brief  swpGuidanceToolsSaveAppVersion:    (  保存 版本号  )
-
+ *
  *  @param  key key
  */
 + (void)swpGuidanceToolsSaveAppVersion:(NSString *)key {

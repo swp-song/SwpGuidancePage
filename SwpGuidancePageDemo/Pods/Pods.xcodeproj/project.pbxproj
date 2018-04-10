@@ -7,22 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3CECAF2B56D3B17E08044B75775023F5 /* SwpGuidanceTools.m in Sources */ = {isa = PBXBuildFile; fileRef = BF384D5777CF71ED877F0FBB520D7B56 /* SwpGuidanceTools.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		072098CE1EF22952825259981A597797 /* SwpGuidancePage.h in Headers */ = {isa = PBXBuildFile; fileRef = A2E02AB658931BF6D2784B7B992918BA /* SwpGuidancePage.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		0D3E3E6A2C7B2C3B5A5D9DADA897714A /* SwpGuidanceModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 92E48914CCA70D01AF586FFBE2051451 /* SwpGuidanceModel.m */; };
+		176BB77EFAF4161129E94F488D5CB6FD /* SwpGuidancePage-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 39BD7659D0ACFA0E4C4A16DF6EBF3DDE /* SwpGuidancePage-dummy.m */; };
+		238FEC053FD2F23782B4918CB73E226A /* SwpGuidanceCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 73668D816C7DBC091AA7108A4A36025E /* SwpGuidanceCell.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		36CC86D70E8A45028C3A5A678346C1D2 /* SwpGuidanceTools.m in Sources */ = {isa = PBXBuildFile; fileRef = E85757944F28F8F0C94C8A3EF0EC3E3A /* SwpGuidanceTools.m */; };
 		50174DCC84DD1BE7A7D3211B2E3C482C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B63C6A64CF66340668996F78DA6BB482 /* UIKit.framework */; };
 		5398FE2E9F24930C5303F8E89DAACCB3 /* Pods-SwpGuidancePageDemo-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 17186B7180F4A84B15521C910EDCB971 /* Pods-SwpGuidancePageDemo-dummy.m */; };
 		56A2DD14D54655E12DB86AEFD2A2BC11 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D88AAE1F92055A60CC2FC970D7D34634 /* Foundation.framework */; };
-		5798EC81D9CB596BBC1784A5AD653D18 /* SwpGuidancePageHeader.h in Headers */ = {isa = PBXBuildFile; fileRef = 74A6A9D697924A882A5091F44A00C840 /* SwpGuidancePageHeader.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5F727B4ADC669EDC934D0E8118CE200F /* SwpGuidanceCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C78DD949C7F20FC81B97A36AD250954 /* SwpGuidanceCollectionView.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		688504CC3967D9D11324CE7CE0C3F79A /* SwpGuidanceCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 613A8219A87BB23DC6ACD0ED0411928A /* SwpGuidanceCell.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		779D335D9F412A5B2F1BAA1D17B39ACC /* SwpGuidanceModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 34A173A4C3D91A2E5E633B395BF53284 /* SwpGuidanceModel.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		91EBDFFCDA5FA6E5EA248F561DD83B66 /* SwpGuidanceModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 94FBE55D9BE90839F6B76574A5D760C4 /* SwpGuidanceModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		9AC97DCB01417D12BE0BA47CEB36B9DB /* SwpGuidanceCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 36D6695B2B6264B273F0B79197AA56A6 /* SwpGuidanceCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		AB935FD8C9A1B6FF772EF48DF31F9783 /* SwpGuidancePage-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F609E1CE9BED10EA82D05B09FAD0FB2 /* SwpGuidancePage-dummy.m */; };
-		AD681D3BEB01D25565C850B9E37A69E3 /* SwpGuidanceCollectionView.h in Headers */ = {isa = PBXBuildFile; fileRef = 13F334C8DA5BAFDAADEBA3B57E84AE5D /* SwpGuidanceCollectionView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B4F2DF43EDCE888973BBFACD07B0FE21 /* SwpGuidancePage.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DD5AD9696DB6213CDF366F399B7E19B /* SwpGuidancePage.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		E0E0D0978335959BCC1FF864184D5D72 /* SwpGuidanceTools.h in Headers */ = {isa = PBXBuildFile; fileRef = A24B7E1CB5F7914796692B2187D43A00 /* SwpGuidanceTools.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		E796F2E1FDE911F4F476249E26562C27 /* SwpGuidancePage.h in Headers */ = {isa = PBXBuildFile; fileRef = 8FB7F458D3B85F21148E05929147B00D /* SwpGuidancePage.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		57C0ED2CD694324C0D1D55C74BDB4B1D /* SwpGuidanceTools.h in Headers */ = {isa = PBXBuildFile; fileRef = F31AC0DAD743AFF8229EED800EE513DC /* SwpGuidanceTools.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		70E160F97C859400C6AE026F4B8FDCB7 /* SwpGuidanceCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F04F96B2AAB920F93B85558D0C8F7BD /* SwpGuidanceCollectionView.m */; };
+		72954CA6C15D60D3C063BD465BEC97B5 /* SwpGuidanceModel.h in Headers */ = {isa = PBXBuildFile; fileRef = EB392D33BD51F4900C813DB76CD345C1 /* SwpGuidanceModel.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		B564972EC98F11768195460A5DD8321C /* SwpGuidanceCollectionView.h in Headers */ = {isa = PBXBuildFile; fileRef = 549F8BF1B60DA5CCD29E64074C0CC8B0 /* SwpGuidanceCollectionView.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		BCCBEADD493A093C4B7FBBDA58EA3D0E /* SwpGuidancePageHeader.h in Headers */ = {isa = PBXBuildFile; fileRef = 7547D947D179729F1FD0A6D5CD7B68DE /* SwpGuidancePageHeader.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		FB8DE2CB03B216F70690769253D14545 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D88AAE1F92055A60CC2FC970D7D34634 /* Foundation.framework */; };
+		FCB89B8B8F823DD946C98BA2B1EC07BA /* SwpGuidancePage.m in Sources */ = {isa = PBXBuildFile; fileRef = 59C01B4D3C9B3880311B9B146F1E2F5D /* SwpGuidancePage.m */; };
+		FE7EF414C2E687FE48FEC3E4B55D50DD /* SwpGuidanceCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 197663D67BAB485F59F1BB3E4CA3EFDC /* SwpGuidanceCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,32 +36,36 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0DD5AD9696DB6213CDF366F399B7E19B /* SwpGuidancePage.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SwpGuidancePage.m; sourceTree = "<group>"; };
-		13F334C8DA5BAFDAADEBA3B57E84AE5D /* SwpGuidanceCollectionView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SwpGuidanceCollectionView.h; sourceTree = "<group>"; };
+		0F04F96B2AAB920F93B85558D0C8F7BD /* SwpGuidanceCollectionView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SwpGuidanceCollectionView.m; sourceTree = "<group>"; };
 		13F40A8F579B40FC199C4D315D6F52F5 /* Pods-SwpGuidancePageDemo-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SwpGuidancePageDemo-acknowledgements.markdown"; sourceTree = "<group>"; };
 		17186B7180F4A84B15521C910EDCB971 /* Pods-SwpGuidancePageDemo-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SwpGuidancePageDemo-dummy.m"; sourceTree = "<group>"; };
-		1C78DD949C7F20FC81B97A36AD250954 /* SwpGuidanceCollectionView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SwpGuidanceCollectionView.m; sourceTree = "<group>"; };
+		197663D67BAB485F59F1BB3E4CA3EFDC /* SwpGuidanceCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SwpGuidanceCell.m; sourceTree = "<group>"; };
+		21BC6ACA65FF7059EC4F70012D7E0C41 /* SwpGuidancePage.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; path = SwpGuidancePage.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		21F326488ABACA80DB4128FCBDB2B213 /* libPods-SwpGuidancePageDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-SwpGuidancePageDemo.a"; path = "libPods-SwpGuidancePageDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		2F609E1CE9BED10EA82D05B09FAD0FB2 /* SwpGuidancePage-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwpGuidancePage-dummy.m"; sourceTree = "<group>"; };
-		34A173A4C3D91A2E5E633B395BF53284 /* SwpGuidanceModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SwpGuidanceModel.m; sourceTree = "<group>"; };
-		36D6695B2B6264B273F0B79197AA56A6 /* SwpGuidanceCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SwpGuidanceCell.h; sourceTree = "<group>"; };
-		613A8219A87BB23DC6ACD0ED0411928A /* SwpGuidanceCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SwpGuidanceCell.m; sourceTree = "<group>"; };
+		2ACCD2CBBA8228A228E9B47E0493E6F1 /* SwpGuidancePage.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwpGuidancePage.xcconfig; sourceTree = "<group>"; };
+		39BD7659D0ACFA0E4C4A16DF6EBF3DDE /* SwpGuidancePage-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwpGuidancePage-dummy.m"; sourceTree = "<group>"; };
+		549F8BF1B60DA5CCD29E64074C0CC8B0 /* SwpGuidanceCollectionView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SwpGuidanceCollectionView.h; sourceTree = "<group>"; };
+		593939DBE756E73DA759399935214F3E /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		59C01B4D3C9B3880311B9B146F1E2F5D /* SwpGuidancePage.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SwpGuidancePage.m; sourceTree = "<group>"; };
 		6C9ADB45690AC1B063F99357FAB461A5 /* Pods-SwpGuidancePageDemo-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SwpGuidancePageDemo-frameworks.sh"; sourceTree = "<group>"; };
-		74A6A9D697924A882A5091F44A00C840 /* SwpGuidancePageHeader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SwpGuidancePageHeader.h; sourceTree = "<group>"; };
+		73668D816C7DBC091AA7108A4A36025E /* SwpGuidanceCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SwpGuidanceCell.h; sourceTree = "<group>"; };
+		7547D947D179729F1FD0A6D5CD7B68DE /* SwpGuidancePageHeader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SwpGuidancePageHeader.h; sourceTree = "<group>"; };
 		7E012C3827142CB4EF71E78C2B37CA41 /* Pods-SwpGuidancePageDemo-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SwpGuidancePageDemo-acknowledgements.plist"; sourceTree = "<group>"; };
-		8FB7F458D3B85F21148E05929147B00D /* SwpGuidancePage.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SwpGuidancePage.h; sourceTree = "<group>"; };
+		7E0697F73D679C4C7227421B5B9F6860 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		85689DB9FABAE3DE308234B875E7219E /* SwpGuidancePage-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwpGuidancePage-prefix.pch"; sourceTree = "<group>"; };
+		92E48914CCA70D01AF586FFBE2051451 /* SwpGuidanceModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SwpGuidanceModel.m; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		94FBE55D9BE90839F6B76574A5D760C4 /* SwpGuidanceModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SwpGuidanceModel.h; sourceTree = "<group>"; };
-		A24B7E1CB5F7914796692B2187D43A00 /* SwpGuidanceTools.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SwpGuidanceTools.h; sourceTree = "<group>"; };
+		A2E02AB658931BF6D2784B7B992918BA /* SwpGuidancePage.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SwpGuidancePage.h; sourceTree = "<group>"; };
 		B4D81F4622624106CC39ADF90957DB2C /* Pods-SwpGuidancePageDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SwpGuidancePageDemo.release.xcconfig"; sourceTree = "<group>"; };
 		B63C6A64CF66340668996F78DA6BB482 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
-		B912630373E394E12530D010CE88542C /* SwpGuidancePage-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwpGuidancePage-prefix.pch"; sourceTree = "<group>"; };
 		BA70BB4EC3FD1CCFFA1E875665FA3E34 /* Pods-SwpGuidancePageDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SwpGuidancePageDemo.debug.xcconfig"; sourceTree = "<group>"; };
-		BF384D5777CF71ED877F0FBB520D7B56 /* SwpGuidanceTools.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SwpGuidanceTools.m; sourceTree = "<group>"; };
-		CA109E048C84C0CFCBDDB7C214B60B77 /* SwpGuidancePage.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwpGuidancePage.xcconfig; sourceTree = "<group>"; };
 		D26AEC92BC635190BC3E39DAC290C821 /* Pods-SwpGuidancePageDemo-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SwpGuidancePageDemo-resources.sh"; sourceTree = "<group>"; };
+		D2EDFCC0CCABD5AACAEED441E95E1480 /* SwpGuidancePage.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = SwpGuidancePage.bundle; path = SwpGuidancePage/Resources/SwpGuidancePage.bundle; sourceTree = "<group>"; };
 		D6FE18DE6B9D6213E4DC8E8EFFAC5065 /* libSwpGuidancePage.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libSwpGuidancePage.a; path = libSwpGuidancePage.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		D88AAE1F92055A60CC2FC970D7D34634 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		E85757944F28F8F0C94C8A3EF0EC3E3A /* SwpGuidanceTools.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SwpGuidanceTools.m; sourceTree = "<group>"; };
+		EB392D33BD51F4900C813DB76CD345C1 /* SwpGuidanceModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SwpGuidanceModel.h; sourceTree = "<group>"; };
+		F31AC0DAD743AFF8229EED800EE513DC /* SwpGuidanceTools.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SwpGuidanceTools.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,44 +89,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		097623BB7034A14E8804C77D69DAFFDC /* Tools */ = {
+		347147BFEFF18BDB4ED0B632C31FCF81 /* SwpGuidancePage */ = {
 			isa = PBXGroup;
 			children = (
-				A24B7E1CB5F7914796692B2187D43A00 /* SwpGuidanceTools.h */,
-				BF384D5777CF71ED877F0FBB520D7B56 /* SwpGuidanceTools.m */,
+				D1D4D6FB7338B98E7211D5C5ECED894B /* Main */,
+				7E2583AA3E5261F7834463F644996779 /* Models */,
+				8455BE8049C7FBECCFB4DB245C415C61 /* Order */,
+				BA28FE7C8E41E46DC18A5A82D359DB36 /* Pod */,
+				84071583EAC977473BE82AB5E255C5B5 /* Resources */,
+				8BFE2C3646E0665B78CC79374E8779A6 /* Support Files */,
+				E7B5B6B68594224328E0796C7BE0016C /* Views */,
 			);
-			name = Tools;
-			path = Tools;
-			sourceTree = "<group>";
-		};
-		22457F0C26662B3E8655B64E675E97B6 /* Development Pods */ = {
-			isa = PBXGroup;
-			children = (
-				D5721A2168DCFCFEBBCB5A6F3B7A1C81 /* SwpGuidancePage */,
-			);
-			name = "Development Pods";
-			sourceTree = "<group>";
-		};
-		3425C5957041BF9B26D5891735B3FED7 /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				8FB7F458D3B85F21148E05929147B00D /* SwpGuidancePage.h */,
-				0DD5AD9696DB6213CDF366F399B7E19B /* SwpGuidancePage.m */,
-			);
-			name = Controllers;
-			path = SwpGuidancePage/Controllers;
-			sourceTree = "<group>";
-		};
-		3B3D1522FC2CB526EB8BAF5119674CA8 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				36D6695B2B6264B273F0B79197AA56A6 /* SwpGuidanceCell.h */,
-				613A8219A87BB23DC6ACD0ED0411928A /* SwpGuidanceCell.m */,
-				13F334C8DA5BAFDAADEBA3B57E84AE5D /* SwpGuidanceCollectionView.h */,
-				1C78DD949C7F20FC81B97A36AD250954 /* SwpGuidanceCollectionView.m */,
-			);
-			name = Views;
-			path = SwpGuidancePage/Views;
+			name = SwpGuidancePage;
+			path = ../..;
 			sourceTree = "<group>";
 		};
 		433CD3331B6C3787F473C941B61FC68F /* Frameworks */ = {
@@ -170,11 +149,76 @@
 			isa = PBXGroup;
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
-				22457F0C26662B3E8655B64E675E97B6 /* Development Pods */,
+				95E64454EFE9222F6445B0D99D2551F8 /* Development Pods */,
 				433CD3331B6C3787F473C941B61FC68F /* Frameworks */,
 				6C1907BFD871BE46E5AF50CFC2D1FD43 /* Products */,
 				ABC45526F31D45301EB3E0D1359B792C /* Targets Support Files */,
 			);
+			sourceTree = "<group>";
+		};
+		7E2583AA3E5261F7834463F644996779 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				EB392D33BD51F4900C813DB76CD345C1 /* SwpGuidanceModel.h */,
+				92E48914CCA70D01AF586FFBE2051451 /* SwpGuidanceModel.m */,
+			);
+			name = Models;
+			path = SwpGuidancePage/Class/Models;
+			sourceTree = "<group>";
+		};
+		84071583EAC977473BE82AB5E255C5B5 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D2EDFCC0CCABD5AACAEED441E95E1480 /* SwpGuidancePage.bundle */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		8455BE8049C7FBECCFB4DB245C415C61 /* Order */ = {
+			isa = PBXGroup;
+			children = (
+				E5E7F5E4D8A7BCBA1BD0E7A0E5B719D6 /* Tools */,
+			);
+			name = Order;
+			path = SwpGuidancePage/Class/Order;
+			sourceTree = "<group>";
+		};
+		8BFE2C3646E0665B78CC79374E8779A6 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				2ACCD2CBBA8228A228E9B47E0493E6F1 /* SwpGuidancePage.xcconfig */,
+				39BD7659D0ACFA0E4C4A16DF6EBF3DDE /* SwpGuidancePage-dummy.m */,
+				85689DB9FABAE3DE308234B875E7219E /* SwpGuidancePage-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "SwpGuidancePageDemo/Pods/Target Support Files/SwpGuidancePage";
+			sourceTree = "<group>";
+		};
+		91D44BB3778B4CF0A4A4C3EDC7F0315A /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				A2E02AB658931BF6D2784B7B992918BA /* SwpGuidancePage.h */,
+				59C01B4D3C9B3880311B9B146F1E2F5D /* SwpGuidancePage.m */,
+			);
+			name = Controllers;
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		95E64454EFE9222F6445B0D99D2551F8 /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				347147BFEFF18BDB4ED0B632C31FCF81 /* SwpGuidancePage */,
+			);
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+		9653D79098A55AD674F96EED108D4274 /* Header */ = {
+			isa = PBXGroup;
+			children = (
+				7547D947D179729F1FD0A6D5CD7B68DE /* SwpGuidancePageHeader.h */,
+			);
+			name = Header;
+			path = Header;
 			sourceTree = "<group>";
 		};
 		ABC45526F31D45301EB3E0D1359B792C /* Targets Support Files */ = {
@@ -185,57 +229,46 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		AF0B4D8CCA30FFA910FC2C171F0B2753 /* Models */ = {
+		BA28FE7C8E41E46DC18A5A82D359DB36 /* Pod */ = {
 			isa = PBXGroup;
 			children = (
-				94FBE55D9BE90839F6B76574A5D760C4 /* SwpGuidanceModel.h */,
-				34A173A4C3D91A2E5E633B395BF53284 /* SwpGuidanceModel.m */,
+				593939DBE756E73DA759399935214F3E /* LICENSE */,
+				7E0697F73D679C4C7227421B5B9F6860 /* README.md */,
+				21BC6ACA65FF7059EC4F70012D7E0C41 /* SwpGuidancePage.podspec */,
 			);
-			name = Models;
-			path = SwpGuidancePage/Models;
+			name = Pod;
 			sourceTree = "<group>";
 		};
-		BF1EC6A8D0D34C319D99F9BC94AE38E3 /* Order */ = {
+		D1D4D6FB7338B98E7211D5C5ECED894B /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				CAEA1ACAA013D40C1ABDE96FC6E59BE1 /* Header */,
-				097623BB7034A14E8804C77D69DAFFDC /* Tools */,
+				91D44BB3778B4CF0A4A4C3EDC7F0315A /* Controllers */,
+				9653D79098A55AD674F96EED108D4274 /* Header */,
 			);
-			name = Order;
-			path = SwpGuidancePage/Order;
+			name = Main;
+			path = SwpGuidancePage/Class/Main;
 			sourceTree = "<group>";
 		};
-		CAEA1ACAA013D40C1ABDE96FC6E59BE1 /* Header */ = {
+		E5E7F5E4D8A7BCBA1BD0E7A0E5B719D6 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
-				74A6A9D697924A882A5091F44A00C840 /* SwpGuidancePageHeader.h */,
+				F31AC0DAD743AFF8229EED800EE513DC /* SwpGuidanceTools.h */,
+				E85757944F28F8F0C94C8A3EF0EC3E3A /* SwpGuidanceTools.m */,
 			);
-			name = Header;
-			path = Header;
+			name = Tools;
+			path = Tools;
 			sourceTree = "<group>";
 		};
-		D5721A2168DCFCFEBBCB5A6F3B7A1C81 /* SwpGuidancePage */ = {
+		E7B5B6B68594224328E0796C7BE0016C /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				3425C5957041BF9B26D5891735B3FED7 /* Controllers */,
-				AF0B4D8CCA30FFA910FC2C171F0B2753 /* Models */,
-				BF1EC6A8D0D34C319D99F9BC94AE38E3 /* Order */,
-				FF9E822FE3C6BB841CA105DDA7B51228 /* Support Files */,
-				3B3D1522FC2CB526EB8BAF5119674CA8 /* Views */,
+				73668D816C7DBC091AA7108A4A36025E /* SwpGuidanceCell.h */,
+				197663D67BAB485F59F1BB3E4CA3EFDC /* SwpGuidanceCell.m */,
+				549F8BF1B60DA5CCD29E64074C0CC8B0 /* SwpGuidanceCollectionView.h */,
+				0F04F96B2AAB920F93B85558D0C8F7BD /* SwpGuidanceCollectionView.m */,
 			);
-			name = SwpGuidancePage;
-			path = ../..;
-			sourceTree = "<group>";
-		};
-		FF9E822FE3C6BB841CA105DDA7B51228 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				CA109E048C84C0CFCBDDB7C214B60B77 /* SwpGuidancePage.xcconfig */,
-				2F609E1CE9BED10EA82D05B09FAD0FB2 /* SwpGuidancePage-dummy.m */,
-				B912630373E394E12530D010CE88542C /* SwpGuidancePage-prefix.pch */,
-			);
-			name = "Support Files";
-			path = "SwpGuidancePageDemo/Pods/Target Support Files/SwpGuidancePage";
+			name = Views;
+			path = SwpGuidancePage/Class/Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -245,12 +278,12 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9AC97DCB01417D12BE0BA47CEB36B9DB /* SwpGuidanceCell.h in Headers */,
-				AD681D3BEB01D25565C850B9E37A69E3 /* SwpGuidanceCollectionView.h in Headers */,
-				91EBDFFCDA5FA6E5EA248F561DD83B66 /* SwpGuidanceModel.h in Headers */,
-				E796F2E1FDE911F4F476249E26562C27 /* SwpGuidancePage.h in Headers */,
-				5798EC81D9CB596BBC1784A5AD653D18 /* SwpGuidancePageHeader.h in Headers */,
-				E0E0D0978335959BCC1FF864184D5D72 /* SwpGuidanceTools.h in Headers */,
+				238FEC053FD2F23782B4918CB73E226A /* SwpGuidanceCell.h in Headers */,
+				B564972EC98F11768195460A5DD8321C /* SwpGuidanceCollectionView.h in Headers */,
+				72954CA6C15D60D3C063BD465BEC97B5 /* SwpGuidanceModel.h in Headers */,
+				072098CE1EF22952825259981A597797 /* SwpGuidancePage.h in Headers */,
+				BCCBEADD493A093C4B7FBBDA58EA3D0E /* SwpGuidancePageHeader.h in Headers */,
+				57C0ED2CD694324C0D1D55C74BDB4B1D /* SwpGuidanceTools.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -278,7 +311,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 88717A664A79717505752FC9D1ACBCA1 /* Build configuration list for PBXNativeTarget "SwpGuidancePage" */;
 			buildPhases = (
-				6414B46336208587ABB984ABD498FC2E /* Sources */,
+				1F901F341D45F5762462C063604324F8 /* Sources */,
 				D4705583A378EF23065298D6348A0110 /* Frameworks */,
 				BB784AB9ABD0CA1D244B76E2F8423D6D /* Headers */,
 			);
@@ -297,8 +330,8 @@
 		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 0700;
+				LastSwiftUpdateCheck = 0930;
+				LastUpgradeCheck = 0930;
 			};
 			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -319,16 +352,16 @@
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		6414B46336208587ABB984ABD498FC2E /* Sources */ = {
+		1F901F341D45F5762462C063604324F8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				688504CC3967D9D11324CE7CE0C3F79A /* SwpGuidanceCell.m in Sources */,
-				5F727B4ADC669EDC934D0E8118CE200F /* SwpGuidanceCollectionView.m in Sources */,
-				779D335D9F412A5B2F1BAA1D17B39ACC /* SwpGuidanceModel.m in Sources */,
-				AB935FD8C9A1B6FF772EF48DF31F9783 /* SwpGuidancePage-dummy.m in Sources */,
-				B4F2DF43EDCE888973BBFACD07B0FE21 /* SwpGuidancePage.m in Sources */,
-				3CECAF2B56D3B17E08044B75775023F5 /* SwpGuidanceTools.m in Sources */,
+				FE7EF414C2E687FE48FEC3E4B55D50DD /* SwpGuidanceCell.m in Sources */,
+				70E160F97C859400C6AE026F4B8FDCB7 /* SwpGuidanceCollectionView.m in Sources */,
+				0D3E3E6A2C7B2C3B5A5D9DADA897714A /* SwpGuidanceModel.m in Sources */,
+				176BB77EFAF4161129E94F488D5CB6FD /* SwpGuidancePage-dummy.m in Sources */,
+				FCB89B8B8F823DD946C98BA2B1EC07BA /* SwpGuidancePage.m in Sources */,
+				36CC86D70E8A45028C3A5A678346C1D2 /* SwpGuidanceTools.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -352,69 +385,7 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		119D30F0481644F47D3D9887EC208589 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = BA70BB4EC3FD1CCFFA1E875665FA3E34 /* Pods-SwpGuidancePageDemo.debug.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				MACH_O_TYPE = staticlib;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		21DB26DE1681E737A235A80B2C3325B3 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = B4D81F4622624106CC39ADF90957DB2C /* Pods-SwpGuidancePageDemo.release.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				MACH_O_TYPE = staticlib;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		5B3C24E4861AEFB22DA57E1B782FBAA3 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = CA109E048C84C0CFCBDDB7C214B60B77 /* SwpGuidancePage.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				GCC_PREFIX_HEADER = "Target Support Files/SwpGuidancePage/SwpGuidancePage-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRIVATE_HEADERS_FOLDER_PATH = "";
-				PUBLIC_HEADERS_FOLDER_PATH = "";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		B254DAA6CF0CE39F4A3D11B90A7E059A /* Release */ = {
+		1EE19F5DD95931924296F637BF18BD8F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -424,10 +395,12 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -435,6 +408,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -443,61 +417,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGNING_REQUIRED = NO;
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				ENABLE_NS_ASSERTIONS = NO;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"POD_CONFIGURATION_RELEASE=1",
-					"$(inherited)",
-				);
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
-				STRIP_INSTALLED_PRODUCT = NO;
-				SYMROOT = "${SRCROOT}/../build";
-			};
-			name = Release;
-		};
-		E4B68EE12B21C47CB798D9B1ECA6D7A7 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_COMMA = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGNING_REQUIRED = NO;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
@@ -522,16 +442,15 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
 				STRIP_INSTALLED_PRODUCT = NO;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Debug;
 		};
-		F045FB1A88920A2E9DBB6FCA44FCC925 /* Release */ = {
+		2D5E78A0C3C1D9CC652456DA4E0FAEE9 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CA109E048C84C0CFCBDDB7C214B60B77 /* SwpGuidancePage.xcconfig */;
+			baseConfigurationReference = 2ACCD2CBBA8228A228E9B47E0493E6F1 /* SwpGuidancePage.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -542,6 +461,31 @@
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = SwpGuidancePage;
+				PRODUCT_NAME = SwpGuidancePage;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4952E7652B30E72AABA62105A9F0C65C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2ACCD2CBBA8228A228E9B47E0493E6F1 /* SwpGuidancePage.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/SwpGuidancePage/SwpGuidancePage-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = SwpGuidancePage;
+				PRODUCT_NAME = SwpGuidancePage;
 				PUBLIC_HEADERS_FOLDER_PATH = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
@@ -551,14 +495,115 @@
 			};
 			name = Release;
 		};
+		5EC2D4287410871E402E171D6C3E4D76 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BA70BB4EC3FD1CCFFA1E875665FA3E34 /* Pods-SwpGuidancePageDemo.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MACH_O_TYPE = staticlib;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CB22087D13692BEA34314CD14E370B1D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B4D81F4622624106CC39ADF90957DB2C /* Pods-SwpGuidancePageDemo.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MACH_O_TYPE = staticlib;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F4568DEE257655D290C2B9CEAB37C934 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
 		0F086885BDD6D8E2F28C66E1F53EEBB2 /* Build configuration list for PBXNativeTarget "Pods-SwpGuidancePageDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				119D30F0481644F47D3D9887EC208589 /* Debug */,
-				21DB26DE1681E737A235A80B2C3325B3 /* Release */,
+				5EC2D4287410871E402E171D6C3E4D76 /* Debug */,
+				CB22087D13692BEA34314CD14E370B1D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -566,8 +611,8 @@
 		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				E4B68EE12B21C47CB798D9B1ECA6D7A7 /* Debug */,
-				B254DAA6CF0CE39F4A3D11B90A7E059A /* Release */,
+				1EE19F5DD95931924296F637BF18BD8F /* Debug */,
+				F4568DEE257655D290C2B9CEAB37C934 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -575,8 +620,8 @@
 		88717A664A79717505752FC9D1ACBCA1 /* Build configuration list for PBXNativeTarget "SwpGuidancePage" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				5B3C24E4861AEFB22DA57E1B782FBAA3 /* Debug */,
-				F045FB1A88920A2E9DBB6FCA44FCC925 /* Release */,
+				2D5E78A0C3C1D9CC652456DA4E0FAEE9 /* Debug */,
+				4952E7652B30E72AABA62105A9F0C65C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 
 #import "ViewController.h"
+
 #import "SwpGuidancePageHeader.h"
 
 @interface AppDelegate ()
@@ -59,20 +60,14 @@
 
 - (void)setRootViewController {
     
-    
-    
-    
-
     // 请修改 App  Build  版本号
     
     NSArray *imags = @[@"guidance_page_1", @"guidance_page_2", @"guidance_page_3"];
     
     __weak typeof(self) selfController = self;
     
-    
-    UIViewController *controller = [[UINavigationController alloc] initWithRootViewController:[ViewController new]];
-    
-    [SwpGuidancePage new]
+    UIViewController *controller        = [[UINavigationController alloc] initWithRootViewController:[ViewController new]];
+    SwpGuidancePage  *swpGuidancePage   = [SwpGuidancePage new]
     .datas(imags)
     .swpGuidancePageControlHidden(NO)
     .swpGuidancePageNumberOfPagesColor([UIColor colorWithHue:0.96 saturation:0.64 brightness:1.00 alpha:1.00])
@@ -84,6 +79,10 @@
     .swpGuidancePageShowSameVersionChain(self.window, YES, ^(){
         selfController.window.rootViewController = controller;
     });
+    
+    
+    NSLog(@"SwpGuidancePageInfo     = %@", swpGuidancePage.swpGuidancePageInfo);
+    NSLog(@"SwpGuidancePageVersion  = %@", swpGuidancePage.swpGuidancePageVersion);
     
 }
 

@@ -1,16 +1,16 @@
 PODS:
-  - SwpGuidancePage (2.0.3)
+  - SwpGuidancePage (2.1.0)
 
 DEPENDENCIES:
   - SwpGuidancePage (from `../`)
 
 EXTERNAL SOURCES:
   SwpGuidancePage:
-    :path: ../
+    :path: "../"
 
 SPEC CHECKSUMS:
-  SwpGuidancePage: 5bfab366a3c19773124a17a73f16a77945d7a893
+  SwpGuidancePage: c2e51573336f1607f3f4e26e47740134b1043b4b
 
-PODFILE CHECKSUM: 8e3165f35f10fdf52c716d468955ca65f90eaaa2
+PODFILE CHECKSUM: 7ee72fd940d16824748e189de45ce4250465c39a
 
-COCOAPODS: 1.4.0.beta.2
+COCOAPODS: 1.5.0

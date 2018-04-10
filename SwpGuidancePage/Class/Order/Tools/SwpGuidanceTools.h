@@ -56,5 +56,23 @@ NS_ASSUME_NONNULL_BEGIN
  */
 + (void)swpGuidanceToolsSetButton:(UIButton *)button setBackgroundColor:(UIColor *)backgroundColor setTitle:(NSString *)title setTitleColor:(UIColor *)titleColor titleFontSize:(float)fontSize;
 
+/**
+ *  @author swp_song
+ *
+ *  @brief  swpGuidanceToolsReadInfo    ( 读取 SwpGuidanceTools 信息资源文件 )
+ *
+ *  @return NSDictionary
+ */
++ (NSDictionary *)swpGuidanceToolsReadInfo;
+
+/**
+ *  @author swp_song
+ *
+ *  @brief  swpGuidanceToolsReadVersion ( 读取 SwpGuidanceTools 版本号 )
+ *
+ *  @return NSString
+ */
++ (NSString *)swpGuidanceToolsReadVersion;
+
 @end
 NS_ASSUME_NONNULL_END
